@@ -1,0 +1,29 @@
+# Django and extensions
+django==4.2.7
+django-cors-headers==4.3.0
+django-filter==23.3
+djangorestframework==3.14.0
+
+# Database
+pyodbc
+django-mssql-backend==2.8.1
+
+# Image processing
+Pillow==10.1.0
+
+# Environment variables
+python-dotenv==1.0.0
+
+# API Documentation
+drf-yasg==1.21.7
+
+# Testing
+pytest==7.4.3
+pytest-django==4.7.0
+faker==20.0.3
+
+# Production
+gunicorn==21.2.0
+whitenoise==6.6.0
+
+# Let's work on the database schema, I agree that we lack wishlist and promotions or coupon system and also instead of storing media files in the database we will store only links to these files in order to keep the database compact, reliable and productive, hashing mechanism will be on the backend side and only the password hash will be stored in the database itself, password verification will be on the backend side in order not to overload the database.
