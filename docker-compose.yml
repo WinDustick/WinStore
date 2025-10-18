@@ -4,6 +4,7 @@ services:
     image: mcr.microsoft.com/mssql/server:latest
     container_name: winstore_mssql
     restart: unless-stopped
+    profiles: ["mssql"]
     environment:
       ACCEPT_EULA: "Y"
       MSSQL_SA_PASSWORD: ${MSSQL_PASSWORD}
@@ -21,6 +22,26 @@ services:
       timeout: 5s
       retries: 5
 
+  # --- Oracle Database ---
+  oracle:
+    image: gvenzl/oracle-xe:21-slim-faststart
+    container_name: winstore_oracle
+    restart: unless-stopped
+    profiles: ["oracle"]
+    environment:
+      ORACLE_PASSWORD: ${ORACLE_PASSWORD}
+    ports:
+      - "1521:1521"
+    volumes:
+      - oracle_db_data:/opt/oracle/oradata
+    networks:
+      - winstore_network
+    healthcheck:
+      test: ["CMD", "healthcheck.sh"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
   # --- Django Backend ---
   backend:
     build: 
@@ -28,17 +49,26 @@ services:
       dockerfile: Dockerfile
     container_name: winstore_backend
     restart: unless-stopped
-    depends_on:
-      - db
+    profiles: ["mssql", "oracle"]
     environment:
-      - DB_HOST=db
-      - DB_PORT=1433
-      - DB_NAME=WinStore
-      - DB_USER=sa
-      - DB_PASSWORD=${MSSQL_PASSWORD}
+      # General
       - SECRET_KEY=${SECRET_KEY:-django-insecure-default-key-change-me}
       - DEBUG=${DEBUG:-True}
       - ALLOWED_HOSTS=${ALLOWED_HOSTS:-localhost,127.0.0.1}
+      # DB Type Switch
+      - DB_TYPE=${DB_TYPE:-mssql}
+      # MS SQL ENV
+      - MSSQL_DB_HOST=db
+      - MSSQL_DB_PORT=1433
+      - MSSQL_DB_NAME=WinStore
+      - MSSQL_DB_USER=sa
+      - MSSQL_DB_PASSWORD=${MSSQL_PASSWORD}
+      # Oracle ENV
+      - ORACLE_DB_HOST=oracle
+      - ORACLE_DB_PORT=1521
+      - ORACLE_DB_SERVICE=XE
+      - ORACLE_DB_USER=WINSTORE_ADMIN
+      - ORACLE_DB_PASSWORD=${ORACLE_ADMIN_PASSWORD}
     ports:
       - "8000:8000"
     volumes:
@@ -48,9 +78,9 @@ services:
     networks:
       - winstore_network
     command: >
-      bash -c "python wait_for_db.py &&
-               python manage.py migrate &&
-               python manage.py collectstatic --noinput &&
+      bash -c "python wait_for_db.py && 
+               python manage.py migrate && 
+               python manage.py collectstatic --noinput && 
                python manage.py runserver 0.0.0.0:8000"
 
   # --- Directus CMS ---
@@ -58,25 +88,25 @@ services:
     image: directus/directus:latest
     container_name: winstore_directus
     restart: unless-stopped
+    profiles: ["mssql", "oracle"]
     ports:
       - "8055:8055"
     environment:
-      KEY: ${DIRECTUS_KEY} 
+      KEY: ${DIRECTUS_KEY}
       SECRET: ${DIRECTUS_SECRET}
-      DB_CLIENT: "mssql"
-      DB_HOST: "db"
-      DB_PORT: "1433"
-      DB_DATABASE: "WinStore"
-      DB_USER: "sa"
-      DB_PASSWORD: ${MSSQL_PASSWORD}
       ADMIN_EMAIL: ${DIRECTUS_ADMIN_EMAIL}
       ADMIN_PASSWORD: ${DIRECTUS_ADMIN_PASSWORD}
       PUBLIC_URL: ${DIRECTUS_PUBLIC_URL:-http://localhost:8055}
+      # Dedicated DB config for Directus
+      DB_CLIENT: ${DIRECTUS_DB_CLIENT}
+      DB_HOST: ${DIRECTUS_DB_HOST}
+      DB_PORT: ${DIRECTUS_DB_PORT}
+      DB_USER: ${DIRECTUS_DB_USER}
+      DB_PASSWORD: ${DIRECTUS_DB_PASSWORD}
+      DB_DATABASE: ${DIRECTUS_DB_DATABASE}
     volumes:
       - directus_uploads:/directus/uploads
       - directus_extensions:/directus/extensions
-    depends_on:
-      - db
     networks:
       - winstore_network
 
@@ -85,6 +115,7 @@ services:
     image: nginx:alpine
     container_name: winstore_nginx
     restart: unless-stopped
+    profiles: ["mssql", "oracle"]
     ports:
       - "80:80"
     volumes:
@@ -100,6 +131,8 @@ services:
 
 volumes:
   sql_server_data:
+    driver: local
+  oracle_db_data:
     driver: local
   static_volume:
     driver: local
