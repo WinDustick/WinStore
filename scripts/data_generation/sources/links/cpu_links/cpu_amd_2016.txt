@@ -1,0 +1,16 @@
+https://www.techpowerup.com/cpu-specs/a10-7860k.c2604
+https://www.techpowerup.com/cpu-specs/a10-7890k.c1832
+https://www.techpowerup.com/cpu-specs/a6-7470k.c2628
+https://www.techpowerup.com/cpu-specs/a6-9230-soc.c3699
+https://www.techpowerup.com/cpu-specs/a6-9500.c1959
+https://www.techpowerup.com/cpu-specs/a6-9500e.c1960
+https://www.techpowerup.com/cpu-specs/athlon-x4-845.c2600
+https://www.techpowerup.com/cpu-specs/pro-a10-8770.c2607
+https://www.techpowerup.com/cpu-specs/pro-a10-8770e.c2608
+https://www.techpowerup.com/cpu-specs/pro-a10-9700e.c2794
+https://www.techpowerup.com/cpu-specs/pro-a12-8870.c2609
+https://www.techpowerup.com/cpu-specs/pro-a12-8870e.c2610
+https://www.techpowerup.com/cpu-specs/pro-a12-9800.c2611
+https://www.techpowerup.com/cpu-specs/pro-a6-9500.c2624
+https://www.techpowerup.com/cpu-specs/pro-a6-9500e.c2623
+https://www.techpowerup.com/cpu-specs/pro-a8-9600.c1957

@@ -10,12 +10,37 @@
 SET ECHO ON
 SET FEEDBACK ON
 SET SERVEROUTPUT ON
-WHENEVER SQLERROR CONTINUE;
+
+DEFINE HOST = 'localhost'
+DEFINE PORT = '1521'
+DEFINE SERVICE = 'XEPDB1'
+DEFINE SYS_PASS = '0r4c13_53rV3r'
 
 PROMPT ========== STARTING SIMPLIFIED DATABASE RESET ==========
+WHENEVER SQLERROR EXIT SQL.SQLCODE
 
 -- Connect with sufficient privileges
-CONNECT SYS/123@PDB1 AS SYSDBA
+CONNECT sys/&SYS_PASS@//&HOST:&PORT/&SERVICE AS SYSDBA
+WHENEVER SQLERROR CONTINUE;
+
+-- Terminate active sessions for WINSTORE users to avoid ORA-01940
+BEGIN
+  FOR s IN (
+    SELECT DISTINCT sid, serial#
+    FROM   v$session
+    WHERE  username IN ('WINSTORE_ADMIN', 'WINSTORE_MANAGER', 'WINSTORE_DEV',
+                        'WINSTORE_APP', 'WINSTORE_READONLY', 'WINSTORE_BACKUP')
+  ) LOOP
+    BEGIN
+      EXECUTE IMMEDIATE 'ALTER SYSTEM KILL SESSION '''||s.sid||','||s.serial#||''' IMMEDIATE';
+      DBMS_OUTPUT.PUT_LINE('Killed session '||s.sid||','||s.serial#);
+    EXCEPTION
+      WHEN OTHERS THEN
+        DBMS_OUTPUT.PUT_LINE('Failed to kill session '||s.sid||','||s.serial#||': '||SQLERRM);
+    END;
+  END LOOP;
+END;
+/
 
 -- Drop application users first (preventing references to WINSTORE_ADMIN objects)
 BEGIN
@@ -50,24 +75,6 @@ BEGIN
         DBMS_OUTPUT.PUT_LINE('Failed to drop role ' || role_rec.role || ': ' || SQLERRM);
     END;    -- КОНЕЦ внутреннего блока BEGIN
   END LOOP;
-END;
-/
-
--- Check for database links to WINSTORE_ADMIN objects from other schemas
-DECLARE
-  v_count NUMBER := 0;
-BEGIN
-  SELECT COUNT(*) INTO v_count FROM dba_objects 
-  WHERE owner != 'WINSTORE_ADMIN'
-  AND (object_name LIKE '%WINSTORE%' OR object_name LIKE '%ORDER%' 
-       OR object_name LIKE '%PRODUCT%' OR object_name LIKE '%USER%');
-  
-  IF v_count > 0 THEN
-    DBMS_OUTPUT.PUT_LINE('WARNING: Found ' || v_count || ' objects in other schemas that may reference WINSTORE objects.');
-    DBMS_OUTPUT.PUT_LINE('You may need to clean these up manually after dropping the WINSTORE_ADMIN user.');
-  ELSE
-    DBMS_OUTPUT.PUT_LINE('No external references to WINSTORE objects found.');
-  END IF;
 END;
 /
 

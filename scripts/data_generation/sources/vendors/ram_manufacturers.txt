@@ -1,0 +1,69 @@
+Random-access memory (RAM) modules
+
+Note that the actual memory chips are manufactured by a small number of DRAM manufacturers. List of memory module manufacturers:
+
+This list is incomplete; you can help by adding missing items. (August 2024)
+
+    ADATA
+    Apacer
+    Asus
+    Buffalo Technology
+    Chaintech
+    Corsair
+    Dataram
+    Fujitsu
+    G.Skill
+    GeIL
+    HyperX
+    IBM
+    Infineon
+    Kingston Technology
+    Lenovo
+    Crucial
+    Mushkin
+    Netlist
+    PNY
+    Rambus
+    Ramtron International
+    Rendition
+    Renesas Technology
+    Samsung Semiconductor
+    Sandisk
+    Sea Sonic
+    SK Hynix
+    Silicon Power
+    Toshiba
+    Transcend
+    Virtium
+    Wilk Elektronik
+    Winbond
+
+Random-access memory (RAM) chips
+
+List of current DRAM manufacturers:[5]
+
+    Micron Technology
+    Samsung Semiconductor
+    SK hynix
+    ChangXin Memory Technologies[6][7]
+    Nanya Technology
+    Powerchip Semiconductor (as a foundry)
+    Winbond (specialty and mobile DRAM)
+
+List of former or defunct DRAM manufacturers:
+
+    NEC, Hitachi, later Elpida Memory (went bankrupt, bought by Micron)
+    Mitsubishi, later Elpida
+    Siemens, spun off Infineon Technologies, spun off Qimonda (went bankrupt, IP bought by Micron and others[7])
+    Inotera, bought by Micron
+    Intel (Intel 1103)
+    Mostek
+    Mosel Vitelic Inc (ProMOS Technologies spun off from Mosel Vitelic)
+    Toshiba (DRAM business sold to Micron)[8][9]
+    Texas Instruments (sold to Micron)[10]
+
+List of fabless DRAM companies:
+
+    Rambus
+
+In addition, other semiconductor manufacturers include SRAM or eDRAM embedded in larger chips.

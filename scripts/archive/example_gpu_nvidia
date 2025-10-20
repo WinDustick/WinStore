@@ -1,0 +1,339 @@
+NVIDIA GeForce RTX 5090
+
+Graphics Processor
+    GB202
+Cores
+    21760
+TMUs
+    680
+ROPs
+    176
+Memory Size
+    32 GB
+Memory Type
+    GDDR7
+Bus Width
+    512 bit
+
+Front GPU Chip
+Back
+Back
+PCB Front
+PCB Front
+PCB Back
+PCB Back
+Recommended Gaming Resolutions:
+
+    1920x1080 2560x1440 3840x2160 
+
+The GeForce RTX 5090 is an enthusiast-class graphics card by NVIDIA, launched on January 30th, 2025. Built on the 5 nm process, and based on the GB202 graphics processor, in its GB202-300-A1 variant, the card supports DirectX 12 Ultimate. This ensures that all modern games will run on GeForce RTX 5090. Additionally, the DirectX 12 Ultimate capability guarantees support for hardware-raytracing, variable-rate shading and more, in upcoming video games. The GB202 graphics processor is a large chip with a die area of 750 mm² and 92,200 million transistors. It features 21760 shading units, 680 texture mapping units, and 176 ROPs. Also included are 680 tensor cores which help improve the speed of machine learning applications. The card also has 170 raytracing acceleration cores. NVIDIA has paired 32 GB GDDR7 memory with the GeForce RTX 5090, which are connected using a 512-bit memory interface. The GPU is operating at a frequency of 2017 MHz, which can be boosted up to 2407 MHz, memory is running at 1750 MHz (28 Gbps effective).
+Being a dual-slot card, the NVIDIA GeForce RTX 5090 draws power from 1x 16-pin power connector, with power draw rated at 575 W maximum. Display outputs include: 1x HDMI 2.1b, 3x DisplayPort 2.1b. GeForce RTX 5090 is connected to the rest of the system using a PCI-Express 5.0 x16 interface. The card's dimensions are 304 mm x 137 mm x 40 mm, and it features a dual-slot cooling solution. Its price at launch was 1999 US Dollars.
+Graphics Processor
+
+GPU Name
+    GB202 
+
+GPU Variant
+    GB202-300-A1 
+
+Architecture
+    Blackwell 2.0
+
+Foundry
+    TSMC
+
+Process Type
+    4N FinFET
+
+Process Size
+    5 nm
+
+Transistors
+    92,200 million
+
+Density
+    122.9M / mm²
+
+Die Size
+    750 mm²
+
+Graphics Card
+
+Release Date
+    Jan 30th, 2025
+
+Announced
+    Jan 6th, 2025
+
+Generation
+    GeForce 50 
+
+Predecessor
+    GeForce 40 
+
+Production
+    Active
+
+Launch Price
+    1,999 USD
+
+Bus Interface
+    PCIe 5.0 x16
+
+Clock Speeds
+
+Base Clock
+    2017 MHz
+
+Boost Clock
+    2407 MHz
+
+Memory Clock
+    1750 MHz
+    28 Gbps effective 
+
+Memory
+
+Memory Size
+    32 GB 
+
+Memory Type
+    GDDR7
+
+Memory Bus
+    512 bit 
+
+Bandwidth
+    1.79 TB/s 
+
+Render Config
+
+Shading Units
+    21760 
+
+TMUs
+    680 
+
+ROPs
+    176 
+
+SM Count
+    170 
+
+Tensor Cores
+    680 
+
+RT Cores
+    170 
+
+L1 Cache
+    128 KB (per SM) 
+
+L2 Cache
+    96 MB 
+
+Theoretical Performance
+
+Pixel Rate
+    423.6 GPixel/s 
+
+Texture Rate
+    1,636.8 GTexel/s 
+
+FP16 (half)
+    104.8 TFLOPS (1:1) 
+
+FP32 (float)
+    104.8 TFLOPS 
+
+FP64 (double)
+    1.637 TFLOPS (1:64) 
+
+Board Design
+
+Slot Width
+    Dual-slot
+
+Length
+    304 mm
+    12 inches
+
+Height
+    137 mm
+    5.4 inches
+
+Width
+    40 mm
+    1.6 inches
+
+TDP
+    575 W
+
+Suggested PSU
+    950 W
+
+Outputs
+    1x HDMI 2.1b
+    3x DisplayPort 2.1b
+
+Power Connectors
+    1x 16-pin
+
+Board Number
+    PG145 SKU 30
+
+Graphics Features
+
+DirectX
+    12 Ultimate (12_2)
+
+OpenGL
+    4.6 
+
+OpenCL
+    3.0
+
+Vulkan
+    1.4
+
+CUDA
+    12.0
+
+Shader Model
+    6.8
+
+GB202 GPU Notes
+Ray Tracing Cores: 4th Gen
+Tensor Cores: 5th Gen
+NVENC: 9th Gen
+NVDEC: 6th Gen
+PureVideo HD: VP11
+VDPAU: Feature Set K
+
+Latest Drivers:
+Windows 10 / 11:
+GeForce Release: Latest
+Quadro Release: Latest
+Data Center Release: Latest
+Retail boards based on this design (60)
+Name 	GPU Clock 	Boost Clock		Memory Clock 	Other Changes
+AFOX RTX 5090
+	2017 MHz 	2407 MHz		1750 MHz 	
+ASUS ROG Astral LC RTX 5090
+	2017 MHz 	2407 MHz		1750 MHz 	288 mm/11.3 inches, 2x HDMI 3x DisplayPort
+ASUS ROG Astral LC RTX 5090 OC Edition
+	2017 MHz 	2580 MHz		1750 MHz 	288 mm/11.3 inches, 2x HDMI 3x DisplayPort
+ASUS ROG Astral RTX 5090
+	2017 MHz 	2407 MHz		1750 MHz 	358 mm/14.1 inches, Quad-slot, 2x HDMI 3x DisplayPort
+ASUS ROG Astral RTX 5090 BTF
+	2017 MHz 	2407 MHz		1750 MHz 	358 mm/14.1 inches, Quad-slot, 2x HDMI 3x DisplayPort
+ASUS ROG Astral RTX 5090 BTF OC Edition
+	2017 MHz 	2580 MHz		1750 MHz 	358 mm/14.1 inches, Quad-slot, 2x HDMI 3x DisplayPort
+ASUS ROG Astral RTX 5090 Dhahab OC Edition
+	2017 MHz 	2580 MHz		1750 MHz 	358 mm/14.1 inches, Quad-slot, 2x HDMI 3x DisplayPort
+ASUS ROG Astral RTX 5090 G700
+	2017 MHz 	2437 MHz		1750 MHz 	358 mm/14.1 inches, Quad-slot, 2x HDMI 3x DisplayPort
+ASUS ROG Astral RTX 5090 OC Edition
+	2017 MHz 	2580 MHz		1750 MHz 	358 mm/14.1 inches, Quad-slot, 2x HDMI 3x DisplayPort
+ASUS ROG Astral RTX 5090 WHITE
+	2017 MHz 	2407 MHz		1750 MHz 	358 mm/14.1 inches, Quad-slot, 2x HDMI 3x DisplayPort
+ASUS ROG Astral RTX 5090 WHITE OC Edition
+	2017 MHz 	2580 MHz		1750 MHz 	358 mm/14.1 inches, Quad-slot, 2x HDMI 3x DisplayPort
+ASUS ROG Matrix Platinum RTX 5090 30th Anniversary Edition
+	2017 MHz 	2580 MHz		1750 MHz 	358 mm/14.1 inches, Quad-slot, 2x HDMI 3x DisplayPort
+ASUS TUF Gaming RTX 5090
+	2017 MHz 	2407 MHz		1750 MHz 	348 mm/13.7 inches, Quad-slot, 2x HDMI 3x DisplayPort
+ASUS TUF Gaming RTX 5090 OC Edition
+	2017 MHz 	2550 MHz		1750 MHz 	348 mm/13.7 inches, Quad-slot, 2x HDMI 3x DisplayPort
+Dell RTX 5090
+	2017 MHz 	2407 MHz		1750 MHz 	
+Gainward RTX 5090 Phantom
+	2017 MHz 	2407 MHz		1750 MHz 	332 mm/13.1 inches, Triple-slot
+Gainward RTX 5090 Phantom GS
+	2017 MHz 	2527 MHz		1750 MHz 	332 mm/13.1 inches, Triple-slot
+GALAX RTX 5090 1-Click OC
+	2017 MHz 	2422 MHz		1750 MHz 	326 mm/12.8 inches, Triple-slot
+GIGABYTE AORUS RTX 5090 AI BOX
+	2017 MHz 	2407 MHz		1750 MHz 	189 mm/7.4 inches, 1x HDMI 3x DisplayPort 1x USB Type-C 2x Thunderbolt
+GIGABYTE AORUS RTX 5090 AI BOX
+	2017 MHz 	2407 MHz		1750 MHz 	302 mm/11.9 inches, Quad-slot
+GIGABYTE AORUS RTX 5090 MASTER
+	2017 MHz 	2655 MHz		1750 MHz 	360 mm/14.2 inches, Quad-slot
+GIGABYTE AORUS RTX 5090 MASTER ICE
+	2017 MHz 	2655 MHz		1750 MHz 	360 mm/14.2 inches, Quad-slot
+GIGABYTE AORUS RTX 5090 STEALTH ICE
+	2017 MHz 	2655 MHz		1750 MHz 	360 mm/14.2 inches, Quad-slot
+GIGABYTE AORUS RTX 5090 XTREME WATERFORCE
+	2017 MHz 	2655 MHz		1750 MHz 	220 mm/8.7 inches
+GIGABYTE AORUS RTX 5090 XTREME WATERFORCE WB
+	2017 MHz 	2655 MHz		1750 MHz 	234 mm/9.2 inches
+GIGABYTE RTX 5090 GAMING OC
+	2017 MHz 	2550 MHz		1750 MHz 	340 mm/13.4 inches, Triple-slot
+GIGABYTE RTX 5090 WINDFORCE
+	2017 MHz 	2407 MHz		1750 MHz 	342 mm/13.5 inches, Triple-slot
+GIGABYTE RTX 5090 WINDFORCE OC
+	2017 MHz 	2467 MHz		1750 MHz 	342 mm/13.5 inches, Triple-slot
+Inno3D RTX 5090 iCHILL Frostbite
+	2017 MHz 	2467 MHz		1750 MHz 	204 mm/8 inches
+Inno3D RTX 5090 iCHILL FROSTBITE PRO
+	2017 MHz 	2407 MHz		1750 MHz 	223 mm/8.8 inches, Single-slot
+Inno3D RTX 5090 iCHILL X3
+	2017 MHz 	2407 MHz		1750 MHz 	334 mm/13.1 inches, Quad-slot
+Inno3D RTX 5090 X3
+	2017 MHz 	2407 MHz		1750 MHz 	333 mm/13.1 inches, Triple-slot
+Inno3D RTX 5090 X3 OC
+	2017 MHz 	2452 MHz		1750 MHz 	333 mm/13.1 inches, Triple-slot
+Inno3D RTX 5090 X3 OC WHITE
+	2017 MHz 	2407 MHz		1750 MHz 	333 mm/13.1 inches, Triple-slot
+KFA2 RTX 5090 1-Click OC
+	2017 MHz 	2422 MHz		1750 MHz 	326 mm/12.8 inches, Triple-slot
+Leadtek WinFast RTX 5090 HURRICANE
+	2017 MHz 	2407 MHz		1750 MHz 	360 mm/14.2 inches, Quad-slot
+Manli Gallardo RTX 5090 OC
+	2017 MHz 	2482 MHz		1750 MHz 	359 mm/14.1 inches, Triple-slot
+Manli Nebula RTX 5090
+	2017 MHz 	2407 MHz		1750 MHz 	345 mm/13.6 inches, Triple-slot
+Manli Stellar RTX 5090 OC
+	2017 MHz 	2437 MHz		1750 MHz 	360 mm/14.2 inches, Triple-slot
+Manli White Gallardo RTX 5090 OC
+	2017 MHz 	2482 MHz		1750 MHz 	359 mm/14.1 inches, Triple-slot
+MSI RTX 5090 GAMING TRIO OC
+	2017 MHz 	2482 MHz		1750 MHz 	359 mm/14.1 inches, Triple-slot
+MSI RTX 5090 Special Edition Air Cooling
+	2017 MHz 	2407 MHz		1750 MHz 	357 mm/14.1 inches, Quad-slot
+MSI RTX 5090 Special Edition Liquid Cooling
+	2017 MHz 	2407 MHz		1750 MHz 	357 mm/14.1 inches, Quad-slot
+MSI RTX 5090 SUPRIM LIQUID SOC
+	2017 MHz 	2527 MHz		1750 MHz 	280 mm/11 inches
+MSI RTX 5090 SUPRIM SOC
+	2017 MHz 	2565 MHz		1750 MHz 	359 mm/14.1 inches, Quad-slot
+MSI RTX 5090 VANGUARD SOC
+	2017 MHz 	2512 MHz		1750 MHz 	357 mm/14.1 inches, Quad-slot
+MSI RTX 5090 VANGUARD SOC LAUNCH EDITION
+	2017 MHz 	2512 MHz		1750 MHz 	357 mm/14.1 inches, Quad-slot
+MSI RTX 5090 VENTUS 3X OC
+	2017 MHz 	2437 MHz		1750 MHz 	325 mm/12.8 inches, Triple-slot
+NVIDIA GeForce RTX 5090 Cyberpunk 2077 Edition
+	2017 MHz 	2407 MHz		1750 MHz 	
+NVIDIA GeForce RTX 5090 Founders Edition
+	2017 MHz 	2407 MHz		1750 MHz 	
+Palit RTX 5090 GameRock
+	2017 MHz 	2407 MHz		1750 MHz 	332 mm/13.1 inches, Triple-slot
+Palit RTX 5090 GameRock OC
+	2017 MHz 	2527 MHz		1750 MHz 	332 mm/13.1 inches, Triple-slot
+PNY RTX 5090 ARGB EPIC-X Overclocked Triple Fan
+	2017 MHz 	2625 MHz		1750 MHz 	329 mm/13 inches, Triple-slot
+PNY RTX 5090 ARGB EPIC-X Triple Fan
+	2017 MHz 	2407 MHz		1750 MHz 	329 mm/13 inches, Triple-slot
+PNY RTX 5090 Overclocked Triple Fan
+	2017 MHz 	2527 MHz		1750 MHz 	329 mm/13 inches, Triple-slot
+PNY RTX 5090 Triple Fan
+	2017 MHz 	2407 MHz		1750 MHz 	329 mm/13 inches, Triple-slot
+ZOTAC RTX 5090 AMP Extreme INFINITY
+	2017 MHz 	2467 MHz		1750 MHz 	332 mm/13.1 inches, Triple-slot
+ZOTAC RTX 5090 SOLID
+	2017 MHz 	2407 MHz		1750 MHz 	330 mm/13 inches, Triple-slot
+ZOTAC RTX 5090 SOLID OC
+	2017 MHz 	2422 MHz		1750 MHz 	330 mm/13 inches, Triple-slot
+ZOTAC RTX 5090 SOLID OC White Edition
+	2017 MHz 	2422 MHz		1750 MHz 	330 mm/13 inches, Triple-slot

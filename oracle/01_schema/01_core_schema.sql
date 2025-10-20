@@ -14,24 +14,52 @@
 -- =====================================================================
 -- Create Tablespace for WinStore
 -- =====================================================================
-DECLARE
-  v_exists NUMBER;
-BEGIN
-  SELECT COUNT(*) INTO v_exists FROM dba_tablespaces WHERE tablespace_name = 'WINSTORE_DATA';
+-- DECLARE
+--   v_exists NUMBER;
+-- BEGIN
+--   SELECT COUNT(*) INTO v_exists FROM dba_tablespaces WHERE tablespace_name = 'WINSTORE_DATA';
   
+--   IF v_exists = 0 THEN
+--     EXECUTE IMMEDIATE '
+--       CREATE TABLESPACE WINSTORE_DATA
+--       DATAFILE ''/opt/oracle/oradata/ORCLCDB/ORCLPDB1/winstore_data01.dbf'' SIZE 200M
+--       AUTOEXTEND ON NEXT 64M MAXSIZE 2048M
+--     ';
+--     DBMS_OUTPUT.PUT_LINE('Tablespace WINSTORE_DATA created successfully.');
+--   ELSE
+--     DBMS_OUTPUT.PUT_LINE('Tablespace WINSTORE_DATA already exists.');
+--   END IF;
+-- END;
+-- /
+
+DECLARE
+  v_exists NUMBER := 0;
+  v_filepath CONSTANT VARCHAR2(256) := '/opt/oracle/oradata/XE/XEPDB1/winstore_data01.dbf';
+BEGIN
+  SELECT COUNT(*) INTO v_exists
+  FROM user_tablespaces
+  WHERE tablespace_name = 'WINSTORE_DATA';
+
   IF v_exists = 0 THEN
-    EXECUTE IMMEDIATE '
-      CREATE TABLESPACE WINSTORE_DATA
-      DATAFILE ''/opt/oracle/oradata/ORCLCDB/ORCLPDB1/winstore_data01.dbf'' SIZE 200M
-      AUTOEXTEND ON NEXT 64M MAXSIZE 2048M
-    ';
-    DBMS_OUTPUT.PUT_LINE('Tablespace WINSTORE_DATA created successfully.');
+    BEGIN
+      EXECUTE IMMEDIATE '
+        CREATE TABLESPACE WINSTORE_DATA
+        DATAFILE ''' || v_filepath || ''' 
+        SIZE 200M
+        AUTOEXTEND ON NEXT 64M MAXSIZE 2048M
+      ';
+      DBMS_OUTPUT.PUT_LINE('Tablespace WINSTORE_DATA created at ' || v_filepath || '.');
+
+    EXCEPTION
+      WHEN OTHERS THEN
+        DBMS_OUTPUT.PUT_LINE('ERROR creating tablespace: ' || SQLERRM);
+        RAISE;
+    END;
   ELSE
     DBMS_OUTPUT.PUT_LINE('Tablespace WINSTORE_DATA already exists.');
   END IF;
 END;
 /
-
 -- =====================================================================
 -- Create Sequences for Auto-Incrementing IDs
 -- =====================================================================

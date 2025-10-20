@@ -1,0 +1,107 @@
+Intel Core i5-14400F
+10
+Cores
+16
+Threads
+65 W
+TDP
+2.5 GHz
+Frequency
+4.7 GHz
+Boost
+Raptor Lake-R
+Codename
+Socket 1700
+Socket
+Package
+Package
+Bundled Heatsink
+Bundled Heatsink
+Connectivity
+Connectivity
+Intel Socket 1700
+Intel Socket 1700
+The Intel Core i5-14400F is a desktop processor with 10 cores, launched in January 2024, at an MSRP of $196. It is part of the Core i5 lineup, using the Raptor Lake Refresh architecture with Socket 1700. Intel Hyper-Threading technology is available and effectly doubles the core-count of the P-Cores, to a total of 16 threads. Core i5-14400F has 20 MB of L3 cache and operates at 2.5 GHz by default, but can boost up to 4.7 GHz, depending on the workload. Intel is making the Core i5-14400F on a 10 nm production node, the transistor count is unknown. The multiplier is locked on Core i5-14400F, which limits its overclocking potential.
+With a TDP of 65 W, the Core i5-14400F consumes typical power levels for a modern PC. Intel's processor supports DDR4 and DDR5 memory with a dual-channel interface. ECC memory is supported, too, which is an important capability for mission-critical systems, to avoid data corruption. For communication with other components in the system, Core i5-14400F uses a PCI-Express Gen 5 connection. This processor does not have integrated graphics, you will need a separate graphics card. Inside the box you will not only find the processor, but also a Laminar RM1 cooler.
+Hardware virtualization is available on the Core i5-14400F, which greatly improves virtual machine performance. Additionally, IOMMU virtualization (PCI passthrough) is supported, so that guest virtual machines may directly use host hardware. Programs using Advanced Vector Extensions (AVX) can run on this processor, boosting performance for calculation-heavy applications. Besides AVX, Intel is including the newer AVX2 standard, too, but not AVX-512.
+Physical
+Socket: 	Intel Socket 1700
+Foundry: 	Intel
+Process Size: 	10 nm
+Die Size: 	215 mm²
+Package: 	FC-LGA16A
+tJMax: 	100°C
+Processor
+Market: 	Desktop
+Production Status: 	Active
+Release Date: 	Jan 8th, 2024
+Launch Price: 	$196
+Part#: 	SRN3R
+SRN47
+Bundled Cooler: 	Laminar RM1
+Performance
+Frequency: 	2.5 GHz
+Turbo Clock: 	up to 4.7 GHz
+E-Core Frequency: 	1800 MHz
+up to 3.5 GHz
+Base Clock: 	100 MHz
+Multiplier: 	25.0x
+Multiplier Unlocked: 	No
+TDP: 	65 W
+PL1:	65 W
+PL2:	148 W
+PL2 Tau Limit:	28 seconds
+Architecture
+Codename: 	Raptor Lake-R
+Generation: 	Core i5
+(Raptor Lake Refresh)
+Memory Support: 	DDR4, DDR5
+DDR4 Speed:	3200 MT/s
+DDR5 Speed:	4800 MT/s
+Memory Bus: 	Dual-channel
+ECC Memory: 	Yes
+PCI-Express: 	Gen 5, 16 Lanes
+(CPU only)
+Secondary PCIe:	Gen 4, 4 Lanes
+Chipsets: 	Intel 600 Series, Intel 700 Series
+Core Config
+# of Cores: 	10
+# of Threads: 	16
+Hybrid Cores: 	P-Cores: 6
+E-Cores: 4
+SMP # CPUs: 	1
+Integrated Graphics: 	N/A
+Cache
+Cache L1: 	80 KB (per core)
+Cache L2: 	1.25 MB (per core)
+Cache L3: 	20 MB (shared)
+E-Core L1: 	96 KB (per core)
+E-Core L2: 	2 MB (per module)
+Features
+
+    MMX
+    SSE
+    SSE2
+    SSE3
+    SSSE3
+    SSE4.2
+    AVX
+    AVX2
+    FMA3
+    SHA
+    EIST
+    Intel 64
+    XD bit
+    VT-x
+    VT-d
+    AES-NI
+    TSX
+    TXT
+    CLMUL
+    F16C
+    BMI1
+    BMI2
+    ABM
+    ADX
+    RdRand
+    TBT 2.0

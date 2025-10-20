@@ -1,0 +1,347 @@
+AMD Radeon RX 7900 XTX
+
+Graphics Processor
+    Navi 31
+Cores
+    6144
+TMUs
+    384
+ROPs
+    192
+Memory Size
+    24 GB
+Memory Type
+    GDDR6
+Bus Width
+    384 bit
+
+Front GPU Chip
+I/O
+I/O
+Top
+Top
+Bottom
+Bottom
+Back
+Back
+PCB Front
+PCB Front
+PCB Back
+PCB Back
+Recommended Gaming Resolutions:
+
+    1920x1080 2560x1440 3840x2160 
+
+The Radeon RX 7900 XTX is an enthusiast-class graphics card by AMD, launched on November 3rd, 2022. Built on the 5 nm process, and based on the Navi 31 graphics processor, in its Navi 31 XTX variant, the card supports DirectX 12 Ultimate. This ensures that all modern games will run on Radeon RX 7900 XTX. Additionally, the DirectX 12 Ultimate capability guarantees support for hardware-raytracing, variable-rate shading and more, in upcoming video games. The Navi 31 graphics processor is a large chip with a die area of 529 mm² and 57,700 million transistors. It features 6144 shading units, 384 texture mapping units, and 192 ROPs. Also included are 192 tensor cores which help improve the speed of machine learning applications. The card also has 96 raytracing acceleration cores. AMD has paired 24 GB GDDR6 memory with the Radeon RX 7900 XTX, which are connected using a 384-bit memory interface. The GPU is operating at a frequency of 1929 MHz, which can be boosted up to 2498 MHz, memory is running at 2500 MHz (20 Gbps effective).
+Being a dual-slot card, the AMD Radeon RX 7900 XTX draws power from 2x 8-pin power connectors, with power draw rated at 355 W maximum. Display outputs include: 1x HDMI 2.1a, 2x DisplayPort 2.1, 1x USB Type-C. Radeon RX 7900 XTX is connected to the rest of the system using a PCI-Express 4.0 x16 interface. The card's dimensions are 287 mm x 110 mm x 51 mm, and it features a dual-slot cooling solution. Its price at launch was 999 US Dollars.
+Graphics Processor
+
+GPU Name
+    Navi 31 
+
+Codename
+    Plum Bonito
+
+GPU Variant
+    Navi 31 XTX
+    (215-145000146) 
+
+Architecture
+    RDNA 3.0
+
+Foundry
+    TSMC
+
+Process Size
+    5 nm
+
+MCD Process
+    6 nm
+
+Process Type
+    N5 / N6 FinFET
+
+Transistors
+    57,700 million
+
+GCD Transistors
+    45,400 million
+
+MCD Transistors
+    2,050 million x6
+
+Density
+    109.1M / mm²
+
+GCD Density
+    150.2M / mm²
+
+MCD Density
+    54.64M / mm²
+
+Die Size
+    529 mm²
+
+GCD Die Size
+    304.35 mm²
+
+MCD Die Size
+    37.52 mm² x6
+
+Chip Package
+    MCM
+
+Graphics Card
+
+Release Date
+    Nov 3rd, 2022
+
+Availability
+    Dec 13th, 2022
+
+Generation
+    Navi III
+    (RX 7000) 
+
+Predecessor
+    Navi II 
+
+Successor
+    Navi IV 
+
+Production
+    Active
+
+Launch Price
+    999 USD
+
+Current Price
+    Amazon / Newegg 
+
+Bus Interface
+    PCIe 4.0 x16
+
+Clock Speeds
+
+Base Clock
+    1929 MHz
+
+Shader Clock
+    2269 MHz
+
+Game Clock
+    2365 MHz
+
+Boost Clock
+    2498 MHz
+
+Memory Clock
+    2500 MHz
+    20 Gbps effective 
+
+Memory
+
+Memory Size
+    24 GB 
+
+Memory Type
+    GDDR6
+
+Memory Bus
+    384 bit 
+
+Bandwidth
+    960.0 GB/s 
+
+Render Config
+
+Shading Units
+    6144 
+
+TMUs
+    384 
+
+ROPs
+    192 
+
+Compute Units
+    96 
+
+Matrix Cores
+    192 
+
+RT Cores
+    96 
+
+L0 Cache
+    64 KB per WGP
+
+L1 Cache
+    256 KB per Array
+
+L2 Cache
+    6 MB 
+
+L3 Cache
+    96 MB
+
+Theoretical Performance
+
+Pixel Rate
+    479.6 GPixel/s 
+
+Texture Rate
+    959.2 GTexel/s 
+
+FP16 (half)
+    122.8 TFLOPS (2:1) 
+
+FP32 (float)
+    61.39 TFLOPS 
+
+FP64 (double)
+    1.918 TFLOPS (1:32) 
+
+Board Design
+
+Slot Width
+    Dual-slot
+
+Length
+    287 mm
+    11.3 inches
+
+Height
+    110 mm
+    4.3 inches
+
+Width
+    51 mm
+    2 inches
+
+TDP
+    355 W
+
+Suggested PSU
+    750 W
+
+Outputs
+    1x HDMI 2.1a
+    2x DisplayPort 2.1
+    1x USB Type-C
+
+Power Connectors
+    2x 8-pin
+
+Board Number
+    109-D702A7-00_02
+
+Graphics Features
+
+DirectX
+    12 Ultimate (12_2)
+
+OpenGL
+    4.6 
+
+OpenCL
+    2.2
+
+Vulkan
+    1.3
+
+Shader Model
+    6.8
+
+Navi 31 GPU Notes
+Generation: Navi III
+Codename: Plum Bonito
+Ray Tracing Cores: 2nd Gen
+Infinity Cache: 2nd Gen
+Graphics/Compute: 11.0.0
+Shader ISA: GFX11.0 (gfx1100)
+Display Core Next: 3.2.0
+Video Core Next: 4.0.0
+System DMA: 6.0.0
+
+Per SIMD32:
+- 10 KB Scalar Register File
+
+Per CU:
+- 16 KB Vector Data Cache
+- 64 KB Local Data Share (GCN-Mode)
+
+Per WGP:
+- 16 KB Scalar Data Cache / K Cache
+- 32 KB Instruction Cache
+- 128 KB Local Data Share
+Retail boards based on this design (34)
+Name 	GPU Clock 	Boost Clock		Memory Clock 	Other Changes
+AMD Radeon RX 7900 XTX
+	1929 MHz 	2498 MHz		2500 MHz 	
+ASRock RX 7900 XTX
+	1929 MHz 	2498 MHz		2500 MHz 	
+ASRock RX 7900 XTX AQUA
+	2119 MHz 	2680 MHz		2500 MHz 	275 mm/10.8 inches, 1x HDMI 3x DisplayPort
+ASRock RX 7900 XTX Creator
+	1929 MHz 	2498 MHz		2500 MHz 	312 mm/12.3 inches, 1x HDMI 3x DisplayPort
+ASRock RX 7900 XTX Passive
+	1929 MHz 	2498 MHz		2500 MHz 	261 mm/10.3 inches
+ASRock RX 7900 XTX Phantom OC
+	2075 MHz 	2617 MHz		2500 MHz 	330 mm/13 inches, Triple-slot, 1x HDMI 3x DisplayPort
+ASRock RX 7900 XTX Taichi OC
+	2119 MHz 	2680 MHz		2500 MHz 	345 mm/13.6 inches, Triple-slot, 1x HDMI 3x DisplayPort
+ASRock RX 7900 XTX Taichi White OC
+	2119 MHz 	2680 MHz		2500 MHz 	345 mm/13.6 inches, Triple-slot, 1x HDMI 3x DisplayPort
+ASUS DUAL RX 7900 XTX OC
+	1980 MHz 	2526 MHz		2500 MHz 	323 mm/12.7 inches, Triple-slot
+ASUS RX 7900 XTX
+	1929 MHz 	2498 MHz		2500 MHz 	
+ASUS TUF RX 7900 XTX GAMING
+	1929 MHz 	2498 MHz		2500 MHz 	353 mm/13.9 inches, Quad-slot, 1x HDMI 3x DisplayPort
+ASUS TUF RX 7900 XTX GAMING OC
+	2029 MHz 	2565 MHz		2500 MHz 	353 mm/13.9 inches, Quad-slot, 1x HDMI 3x DisplayPort
+BIOSTAR RX 7900 XTX
+	1929 MHz 	2498 MHz		2500 MHz 	
+BIOSTAR RX 7900 XTX
+	1929 MHz 	2498 MHz		2500 MHz 	Triple-slot, 1x HDMI 3x DisplayPort
+GIGABYTE AORUS RX 7900 XTX ELITE
+	2119 MHz 	2680 MHz		2500 MHz 	335 mm/13.2 inches, Quad-slot, 2x HDMI 2x DisplayPort
+GIGABYTE RX 7900 XTX
+	1929 MHz 	2498 MHz		2500 MHz 	
+GIGABYTE RX 7900 XTX GAMING OC
+	1980 MHz 	2526 MHz		2500 MHz 	331 mm/13 inches, 2x HDMI 2x DisplayPort
+KUROUTOSHIKOU RX 7900 XTX
+	1929 MHz 	2498 MHz		2500 MHz 	
+MSI RX 7900 XTX GAMING TRIO CLASSIC
+	1929 MHz 	2498 MHz		2500 MHz 	325 mm/12.8 inches, Triple-slot, 1x HDMI 3x DisplayPort
+PowerColor Hellhound RX 7900 XTX
+	1980 MHz 	2526 MHz		2500 MHz 	320 mm/12.6 inches, Triple-slot, 1x HDMI 3x DisplayPort
+PowerColor Hellhound Spectral White RX 7900 XTX
+	1980 MHz 	2526 MHz		2500 MHz 	320 mm/12.6 inches, Triple-slot, 1x HDMI 3x DisplayPort
+PowerColor Liquid Devil RX 7900 XTX
+	2075 MHz 	2617 MHz		2500 MHz 	288 mm/11.3 inches, 1x HDMI 3x DisplayPort
+PowerColor Red Devil RX 7900 XTX
+	2029 MHz 	2565 MHz		2500 MHz 	338 mm/13.3 inches, Quad-slot, 1x HDMI 3x DisplayPort
+PowerColor Red Devil RX 7900 XTX Limited Edition
+	2029 MHz 	2565 MHz		2500 MHz 	338 mm/13.3 inches, Quad-slot, 1x HDMI 3x DisplayPort
+PowerColor RX 7900 XTX
+	1929 MHz 	2498 MHz		2500 MHz 	
+Sapphire NITRO+ RX 7900 XTX Vapor-X
+	2119 MHz 	2680 MHz		2500 MHz 	320 mm/12.6 inches, Quad-slot, 2x HDMI 2x DisplayPort, 420 W
+Sapphire PULSE RX 7900 XTX
+	1980 MHz 	2526 MHz		2500 MHz 	313 mm/12.3 inches, Triple-slot, 2x HDMI 2x DisplayPort, 370 W
+Sapphire RX 7900 XTX
+	1929 MHz 	2498 MHz		2500 MHz 	
+VASTARMOR RX 7900 XTX Starry Sky
+	1929 MHz 	2498 MHz		2500 MHz 	330 mm/13 inches, Triple-slot, 1x HDMI 3x DisplayPort
+VASTARMOR RX 7900 XTX Super Alloy
+	2119 MHz 	2680 MHz		2500 MHz 	330 mm/13 inches, Triple-slot, 1x HDMI 3x DisplayPort
+XFX MERCURY MagAir RX 7900 XTX
+	2075 MHz 	2617 MHz		2500 MHz 	346 mm/13.6 inches, Triple-slot, 1x HDMI 3x DisplayPort
+XFX RX 7900 XTX
+	1929 MHz 	2498 MHz		2500 MHz 	
+XFX Speedster MERC310 RX 7900 XTX Black
+	2075 MHz 	2617 MHz		2500 MHz 	344 mm/13.5 inches, Triple-slot, 1x HDMI 3x DisplayPort
+Yeston RX 7900 XTX SAKURA SUGAR
+	1929 MHz 	2498 MHz		2500 MHz 	330 mm/13 inches, Triple-slot, 1x HDMI 3x DisplayPort

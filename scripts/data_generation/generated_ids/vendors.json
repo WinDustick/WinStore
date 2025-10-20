@@ -1,0 +1,530 @@
+[
+    {
+        "id": 1,
+        "name": "Fractal Design \"Kelvin Series\""
+    },
+    {
+        "id": 2,
+        "name": "Inno3D"
+    },
+    {
+        "id": 3,
+        "name": "Sea Sonic"
+    },
+    {
+        "id": 4,
+        "name": "Lenovo"
+    },
+    {
+        "id": 5,
+        "name": "Ramtron International"
+    },
+    {
+        "id": 6,
+        "name": "PC Power and Cooling"
+    },
+    {
+        "id": 7,
+        "name": "Toshiba"
+    },
+    {
+        "id": 8,
+        "name": "Renesas Technology"
+    },
+    {
+        "id": 9,
+        "name": "FSP Group"
+    },
+    {
+        "id": 10,
+        "name": "Gigabyte Technology"
+    },
+    {
+        "id": 11,
+        "name": "Mitsubishi, later Elpida"
+    },
+    {
+        "id": 12,
+        "name": "VIA Technologies"
+    },
+    {
+        "id": 13,
+        "name": "Sapphire"
+    },
+    {
+        "id": 14,
+        "name": "Delta Electronics"
+    },
+    {
+        "id": 15,
+        "name": "Supermicro"
+    },
+    {
+        "id": 16,
+        "name": "KFA2"
+    },
+    {
+        "id": 17,
+        "name": "Sapphire Technology"
+    },
+    {
+        "id": 18,
+        "name": "Corsair"
+    },
+    {
+        "id": 19,
+        "name": "PNY"
+    },
+    {
+        "id": 20,
+        "name": "Buffalo Technology"
+    },
+    {
+        "id": 21,
+        "name": "Asetek"
+    },
+    {
+        "id": 22,
+        "name": "Chieftec"
+    },
+    {
+        "id": 23,
+        "name": "XFX"
+    },
+    {
+        "id": 24,
+        "name": "HyperX"
+    },
+    {
+        "id": 25,
+        "name": "Acer"
+    },
+    {
+        "id": 26,
+        "name": "Netlist"
+    },
+    {
+        "id": 27,
+        "name": "Winbond"
+    },
+    {
+        "id": 28,
+        "name": "ChangXin Memory Technologies[6][7]"
+    },
+    {
+        "id": 29,
+        "name": "Hama Photo"
+    },
+    {
+        "id": 30,
+        "name": "Water block"
+    },
+    {
+        "id": 31,
+        "name": "Mostek"
+    },
+    {
+        "id": 32,
+        "name": "MSI"
+    },
+    {
+        "id": 33,
+        "name": "Thermalright"
+    },
+    {
+        "id": 34,
+        "name": "Fan controllers"
+    },
+    {
+        "id": 35,
+        "name": "Zotac"
+    },
+    {
+        "id": 36,
+        "name": "Virtium"
+    },
+    {
+        "id": 37,
+        "name": "Nidec"
+    },
+    {
+        "id": 38,
+        "name": "Ebm-papst"
+    },
+    {
+        "id": 39,
+        "name": "Fans"
+    },
+    {
+        "id": 40,
+        "name": "Aigo"
+    },
+    {
+        "id": 41,
+        "name": "Deepcool"
+    },
+    {
+        "id": 42,
+        "name": "AMD"
+    },
+    {
+        "id": 43,
+        "name": "be quiet!"
+    },
+    {
+        "id": 44,
+        "name": "Apacer"
+    },
+    {
+        "id": 45,
+        "name": "GeIL"
+    },
+    {
+        "id": 46,
+        "name": "ADATA"
+    },
+    {
+        "id": 47,
+        "name": "IBM"
+    },
+    {
+        "id": 48,
+        "name": "PowerColor"
+    },
+    {
+        "id": 49,
+        "name": "In addition, other semiconductor manufacturers include SRAM or eDRAM embedded in larger chips."
+    },
+    {
+        "id": 50,
+        "name": "Crucial"
+    },
+    {
+        "id": 51,
+        "name": "OCZ Technology"
+    },
+    {
+        "id": 52,
+        "name": "Cooler Master"
+    },
+    {
+        "id": 53,
+        "name": "AOpen"
+    },
+    {
+        "id": 54,
+        "name": "Gumstix"
+    },
+    {
+        "id": 55,
+        "name": "NZXT"
+    },
+    {
+        "id": 56,
+        "name": "Inotera, bought by Micron"
+    },
+    {
+        "id": 57,
+        "name": "Intel"
+    },
+    {
+        "id": 58,
+        "name": "EVGA Corporation"
+    },
+    {
+        "id": 59,
+        "name": "Trust"
+    },
+    {
+        "id": 60,
+        "name": "Colorful"
+    },
+    {
+        "id": 61,
+        "name": "Asus"
+    },
+    {
+        "id": 62,
+        "name": "Chassis Plans"
+    },
+    {
+        "id": 63,
+        "name": "ASRock"
+    },
+    {
+        "id": 64,
+        "name": "Nanya Technology"
+    },
+    {
+        "id": 65,
+        "name": "PNY Technologies"
+    },
+    {
+        "id": 66,
+        "name": "Chaintech"
+    },
+    {
+        "id": 67,
+        "name": "EVGA"
+    },
+    {
+        "id": 68,
+        "name": "Dynex"
+    },
+    {
+        "id": 69,
+        "name": "Razer Inc. \"Hanbo Chroma Series\""
+    },
+    {
+        "id": 70,
+        "name": "Micron Technology"
+    },
+    {
+        "id": 71,
+        "name": "Lian Li"
+    },
+    {
+        "id": 72,
+        "name": "Fractal Design"
+    },
+    {
+        "id": 73,
+        "name": "Inventec"
+    },
+    {
+        "id": 74,
+        "name": "GELID Solutions"
+    },
+    {
+        "id": 75,
+        "name": "Thermaltake \"Water2.0 Series\""
+    },
+    {
+        "id": 76,
+        "name": "ebm-papst"
+    },
+    {
+        "id": 77,
+        "name": "Arctic GmbH"
+    },
+    {
+        "id": 78,
+        "name": "G.Skill"
+    },
+    {
+        "id": 79,
+        "name": "Yeston"
+    },
+    {
+        "id": 80,
+        "name": "Gainward"
+    },
+    {
+        "id": 81,
+        "name": "Wilk Elektronik"
+    },
+    {
+        "id": 82,
+        "name": "Lian-Li"
+    },
+    {
+        "id": 83,
+        "name": "Albatron"
+    },
+    {
+        "id": 84,
+        "name": "Fujitsu"
+    },
+    {
+        "id": 85,
+        "name": "Silicon Power"
+    },
+    {
+        "id": 86,
+        "name": "Corsair \"H-Series\""
+    },
+    {
+        "id": 87,
+        "name": "Tyan"
+    },
+    {
+        "id": 88,
+        "name": "Razer Inc."
+    },
+    {
+        "id": 89,
+        "name": "Seasonic"
+    },
+    {
+        "id": 90,
+        "name": "Computer cooling systems"
+    },
+    {
+        "id": 91,
+        "name": "Rendition"
+    },
+    {
+        "id": 92,
+        "name": "EKWB"
+    },
+    {
+        "id": 93,
+        "name": "Rambus"
+    },
+    {
+        "id": 94,
+        "name": "Sandisk"
+    },
+    {
+        "id": 95,
+        "name": "First International Computer"
+    },
+    {
+        "id": 96,
+        "name": "Gunnir"
+    },
+    {
+        "id": 97,
+        "name": "Seventeam"
+    },
+    {
+        "id": 98,
+        "name": "Fujitsu[1]"
+    },
+    {
+        "id": 99,
+        "name": "Maplin"
+    },
+    {
+        "id": 100,
+        "name": "Cooler Master \"Seidon Series\""
+    },
+    {
+        "id": 101,
+        "name": "Pegatron"
+    },
+    {
+        "id": 102,
+        "name": "NVIDIA"
+    },
+    {
+        "id": 103,
+        "name": "Palit"
+    },
+    {
+        "id": 104,
+        "name": "Refillable liquid cooling kits"
+    },
+    {
+        "id": 105,
+        "name": "NZXT \"Kraken Series\""
+    },
+    {
+        "id": 106,
+        "name": "ZOTAC"
+    },
+    {
+        "id": 107,
+        "name": "Dataram"
+    },
+    {
+        "id": 108,
+        "name": "SK Hynix"
+    },
+    {
+        "id": 109,
+        "name": "Shuttle Inc."
+    },
+    {
+        "id": 110,
+        "name": "Powercolor"
+    },
+    {
+        "id": 111,
+        "name": "Kingston Technology"
+    },
+    {
+        "id": 112,
+        "name": "Antec"
+    },
+    {
+        "id": 113,
+        "name": "Vigor Gaming"
+    },
+    {
+        "id": 114,
+        "name": "ACube Systems"
+    },
+    {
+        "id": 115,
+        "name": "StarTech.com"
+    },
+    {
+        "id": 116,
+        "name": "Foxconn"
+    },
+    {
+        "id": 117,
+        "name": "Xilence"
+    },
+    {
+        "id": 118,
+        "name": "Lite-On"
+    },
+    {
+        "id": 119,
+        "name": "Gigabyte"
+    },
+    {
+        "id": 120,
+        "name": "Noctua"
+    },
+    {
+        "id": 121,
+        "name": "Mushkin"
+    },
+    {
+        "id": 122,
+        "name": "Simmtronics"
+    },
+    {
+        "id": 123,
+        "name": "SK hynix"
+    },
+    {
+        "id": 124,
+        "name": "Deepcool \"CAPTAIN Series\" \"MAELSTROM Series\""
+    },
+    {
+        "id": 125,
+        "name": "Super Flower"
+    },
+    {
+        "id": 126,
+        "name": "Transcend"
+    },
+    {
+        "id": 127,
+        "name": "Infineon"
+    },
+    {
+        "id": 128,
+        "name": "Biostar"
+    },
+    {
+        "id": 129,
+        "name": "GALAX"
+    },
+    {
+        "id": 130,
+        "name": "Samsung Semiconductor"
+    },
+    {
+        "id": 131,
+        "name": "Leadtek"
+    },
+    {
+        "id": 132,
+        "name": "Thermaltake"
+    }
+]

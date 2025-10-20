@@ -1,0 +1,17 @@
+https://www.techpowerup.com/cpu-specs/core-5-120.c4236
+https://www.techpowerup.com/cpu-specs/core-i5-110.c4240
+https://www.techpowerup.com/cpu-specs/core-ultra-3-205.c4242
+https://www.techpowerup.com/cpu-specs/core-ultra-5-225.c3783
+https://www.techpowerup.com/cpu-specs/core-ultra-5-225f.c3784
+https://www.techpowerup.com/cpu-specs/core-ultra-5-225t.c4017
+https://www.techpowerup.com/cpu-specs/core-ultra-5-235.c4018
+https://www.techpowerup.com/cpu-specs/core-ultra-5-235a.c4232
+https://www.techpowerup.com/cpu-specs/core-ultra-5-235t.c4019
+https://www.techpowerup.com/cpu-specs/core-ultra-5-235ta.c4233
+https://www.techpowerup.com/cpu-specs/core-ultra-5-245.c4020
+https://www.techpowerup.com/cpu-specs/core-ultra-5-245t.c4021
+https://www.techpowerup.com/cpu-specs/core-ultra-7-265.c3777
+https://www.techpowerup.com/cpu-specs/core-ultra-7-265f.c3779
+https://www.techpowerup.com/cpu-specs/core-ultra-7-265t.c3780
+https://www.techpowerup.com/cpu-specs/core-ultra-9-285.c3774
+https://www.techpowerup.com/cpu-specs/core-ultra-9-285t.c3775

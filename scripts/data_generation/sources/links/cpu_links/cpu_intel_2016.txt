@@ -1,0 +1,11 @@
+https://www.techpowerup.com/cpu-specs/core-i7-6785r.c3880
+https://www.techpowerup.com/cpu-specs/core-i7-6800k.c1844
+https://www.techpowerup.com/cpu-specs/core-i7-6850k.c1845
+https://www.techpowerup.com/cpu-specs/core-i7-6900k.c1846
+https://www.techpowerup.com/cpu-specs/core-i7-6950x.c1847
+https://www.techpowerup.com/cpu-specs/xeon-e5-1620-v4.c3172
+https://www.techpowerup.com/cpu-specs/xeon-e5-1630-v4.c3173
+https://www.techpowerup.com/cpu-specs/xeon-e5-1650-v4.c3174
+https://www.techpowerup.com/cpu-specs/xeon-e5-1660-v4.c3175
+https://www.techpowerup.com/cpu-specs/xeon-e5-1680-v4.c3176
+https://www.techpowerup.com/cpu-specs/xeon-e5-2699a-v4.c3227

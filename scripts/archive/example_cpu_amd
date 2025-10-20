@@ -1,0 +1,98 @@
+AMD Ryzen 5 5600F
+6
+Cores
+12
+Threads
+65 W
+TDP
+3 GHz
+Frequency
+4 GHz
+Boost
+Vermeer
+Codename
+Socket AM4
+Socket
+Connectivity
+Connectivity
+AMD Socket AM4
+AMD Socket AM4
+The AMD Ryzen 5 5600F is a desktop processor with 6 cores, launched in September 2025. It is part of the Ryzen 5 lineup, using the Zen 3 (Vermeer) architecture with Socket AM4. Thanks to AMD Simultaneous Multithreading (SMT) the core-count is effectively doubled, to 12 threads. Ryzen 5 5600F has 32 MB of L3 cache and operates at 3 GHz by default, but can boost up to 4 GHz, depending on the workload. AMD is building the Ryzen 5 5600F on a 7 nm production process using 4,150 million transistors. The silicon die of the chip is not fabricated at AMD, but at the foundry of TSMC. You may freely adjust the unlocked multiplier on Ryzen 5 5600F, which simplifies overclocking greatly, as you can easily dial in any overclocking frequency.
+With a TDP of 65 W, the Ryzen 5 5600F consumes typical power levels for a modern PC. AMD's processor supports DDR4 memory with a dual-channel interface. The highest officially supported memory speed is 3200 MT/s, but with overclocking (and the right memory modules) you can go even higher. ECC memory is supported, too, which is an important capability for mission-critical systems, to avoid data corruption. For communication with other components in the machine, Ryzen 5 5600F uses a PCI-Express Gen 4 connection. This processor does not have integrated graphics, you will need a separate graphics card. Inside the box you will not only find the processor, but also a Wraith Stealth cooler.
+Hardware virtualization is available on the Ryzen 5 5600F, which greatly improves virtual machine performance. Programs using Advanced Vector Extensions (AVX) will run on this processor, boosting performance for calculation-heavy applications. Besides AVX, AMD is including the newer AVX2 standard, too, but not AVX-512.
+Physical
+Socket: 	AMD Socket AM4
+Foundry: 	TSMC
+Process Size: 	7 nm
+Transistors: 	4,150 million
+Die Size: 	74 mm²
+I/O Process Size:	12 nm
+I/O Die Size:	125 mm²
+Package: 	µOPGA-1331
+tCaseMax: 	95°C
+Processor
+Market: 	Desktop
+Production Status: 	Active
+Release Date: 	Sep 16th, 2025
+Part#: 	100-000001903
+Bundled Cooler: 	Wraith Stealth
+Performance
+Frequency: 	3 GHz
+Turbo Clock: 	up to 4 GHz
+Base Clock: 	100 MHz
+Multiplier: 	30.0x
+Multiplier Unlocked: 	Yes
+TDP: 	65 W
+PPT:	88 W
+Architecture
+Codename: 	Vermeer
+Generation: 	Ryzen 5
+(Zen 3 (Vermeer))
+Memory Support: 	DDR4
+Rated Speed: 	3200 MT/s
+Memory Bus: 	Dual-channel
+Memory Bandwidth: 	51.2 GB/s
+ECC Memory: 	Yes
+PCI-Express: 	Gen 4, 20 Lanes
+(CPU only)
+Chipsets: 	AMD 300 Series*, AMD 400 Series, AMD 500 Series
+Core Config
+# of Cores: 	6
+# of Threads: 	12
+SMP # CPUs: 	1
+Integrated Graphics: 	N/A
+Cache
+Cache L1: 	64 KB (per core)
+Cache L2: 	512 KB (per core)
+Cache L3: 	32 MB (shared)
+Features
+
+    MMX
+    SSE
+    SSE2
+    SSE3
+    SSSE3
+    SSE4A
+    SSE4.1
+    SSE4.2
+    AES
+    AVX
+    AVX2
+    BMI1
+    BMI2
+    SHA
+    F16C
+    FMA3
+    AMD64
+    EVP
+    AMD-V
+    SMAP
+    SMEP
+    SMT
+    Precision Boost 2
+    XFR 2
+
+Notes
+AMD 300 Series chipset support is contingent on vendor updates to AGESA 1.2.0.6b/c.
+
+ECC modes require motherboard support.

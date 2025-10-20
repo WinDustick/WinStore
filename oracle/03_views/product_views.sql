@@ -284,3 +284,764 @@ CREATE INDEX IX_mv_product_summary_Featured_Active ON mv_product_summary(is_feat
 
 COMMIT;
 PROMPT Product views created successfully
+
+-- =====================================================================
+-- Product Full Details (All-in-one for product_ID = 1)
+-- =====================================================================
+-- This view flattens most related information for a single product (ID=1)
+-- into a key-value style result set to make it easy to inspect everything
+-- associated with the product without running multiple queries.
+--
+-- Columns:
+--   product_ID, product_NAME, category_NAME, vendor_name,
+--   product_PRICE, product_STOCK, created_AT,
+--   section, item_key, item_value
+--
+-- Notes:
+-- - item_value is provided as NVARCHAR2 up to 2000 chars (CLOBs truncated).
+-- - This is intentionally focused on product 1 as requested. For a reusable
+--   variant, consider converting this to a parameterized pipelined function
+--   or a generic view without WHERE and filter at query time.
+
+CREATE OR REPLACE VIEW view_product_1_full_details AS
+-- Base: core scalar fields as key/value rows
+SELECT
+    p.product_ID,
+    p.product_NAME,
+    c.category_NAME,
+    v.ven_NAME AS vendor_name,
+    NVL(p.product_PRICE, 0) AS product_PRICE,
+    NVL(p.product_STOCK, 0) AS product_STOCK,
+    p.created_AT,
+    TO_NCHAR('product') AS section,
+    TO_NCHAR('product_NAME') AS item_key,
+    TO_NCHAR(p.product_NAME) AS item_value
+FROM Products p
+JOIN Categories c ON p.category_ID = c.category_ID
+JOIN Vendors v ON p.ven_ID = v.ven_ID
+WHERE p.product_ID = 1
+UNION ALL
+SELECT p.product_ID, p.product_NAME, c.category_NAME, v.ven_NAME,
+       NVL(p.product_PRICE, 0), NVL(p.product_STOCK, 0), p.created_AT,
+    TO_NCHAR('product'), TO_NCHAR('product_PRICE'), TO_NCHAR(NVL(p.product_PRICE, 0))
+FROM Products p
+JOIN Categories c ON p.category_ID = c.category_ID
+JOIN Vendors v ON p.ven_ID = v.ven_ID
+WHERE p.product_ID = 1
+UNION ALL
+SELECT p.product_ID, p.product_NAME, c.category_NAME, v.ven_NAME,
+       NVL(p.product_PRICE, 0), NVL(p.product_STOCK, 0), p.created_AT,
+    TO_NCHAR('product'), TO_NCHAR('product_STOCK'), TO_NCHAR(NVL(p.product_STOCK, 0))
+FROM Products p
+JOIN Categories c ON p.category_ID = c.category_ID
+JOIN Vendors v ON p.ven_ID = v.ven_ID
+WHERE p.product_ID = 1
+UNION ALL
+SELECT p.product_ID, p.product_NAME, c.category_NAME, v.ven_NAME,
+       NVL(p.product_PRICE, 0), NVL(p.product_STOCK, 0), p.created_AT,
+    TO_NCHAR('product'), TO_NCHAR('is_featured'), TO_NCHAR(NVL(p.is_featured, 0))
+FROM Products p
+JOIN Categories c ON p.category_ID = c.category_ID
+JOIN Vendors v ON p.ven_ID = v.ven_ID
+WHERE p.product_ID = 1
+UNION ALL
+SELECT p.product_ID, p.product_NAME, c.category_NAME, v.ven_NAME,
+       NVL(p.product_PRICE, 0), NVL(p.product_STOCK, 0), p.created_AT,
+    TO_NCHAR('product'), TO_NCHAR('is_active'), TO_NCHAR(NVL(p.is_active, 1))
+FROM Products p
+JOIN Categories c ON p.category_ID = c.category_ID
+JOIN Vendors v ON p.ven_ID = v.ven_ID
+WHERE p.product_ID = 1
+UNION ALL
+SELECT p.product_ID, p.product_NAME, c.category_NAME, v.ven_NAME,
+       NVL(p.product_PRICE, 0), NVL(p.product_STOCK, 0), p.created_AT,
+    TO_NCHAR('product'), TO_NCHAR('product_DESCRIPT'), TO_NCHAR(DBMS_LOB.SUBSTR(p.product_DESCRIPT, 2000, 1))
+FROM Products p
+JOIN Categories c ON p.category_ID = c.category_ID
+JOIN Vendors v ON p.ven_ID = v.ven_ID
+WHERE p.product_ID = 1
+UNION ALL
+SELECT p.product_ID, p.product_NAME, c.category_NAME, v.ven_NAME,
+       NVL(p.product_PRICE, 0), NVL(p.product_STOCK, 0), p.created_AT,
+    TO_NCHAR('product'), TO_NCHAR('updated_AT'), TO_NCHAR(TO_CHAR(p.updated_AT, 'YYYY-MM-DD"T"HH24:MI:SS'))
+FROM Products p
+JOIN Categories c ON p.category_ID = c.category_ID
+JOIN Vendors v ON p.ven_ID = v.ven_ID
+WHERE p.product_ID = 1
+
+-- Category info
+UNION ALL
+SELECT p.product_ID, p.product_NAME, c.category_NAME, v.ven_NAME,
+       NVL(p.product_PRICE, 0), NVL(p.product_STOCK, 0), p.created_AT,
+    TO_NCHAR('category'), TO_NCHAR('category_ID'), TO_NCHAR(c.category_ID)
+FROM Products p
+JOIN Categories c ON p.category_ID = c.category_ID
+JOIN Vendors v ON p.ven_ID = v.ven_ID
+WHERE p.product_ID = 1
+UNION ALL
+SELECT p.product_ID, p.product_NAME, c.category_NAME, v.ven_NAME,
+       NVL(p.product_PRICE, 0), NVL(p.product_STOCK, 0), p.created_AT,
+    TO_NCHAR('category'), TO_NCHAR('category_NAME'), TO_NCHAR(c.category_NAME)
+FROM Products p
+JOIN Categories c ON p.category_ID = c.category_ID
+JOIN Vendors v ON p.ven_ID = v.ven_ID
+WHERE p.product_ID = 1
+
+-- Vendor info
+UNION ALL
+SELECT p.product_ID, p.product_NAME, c.category_NAME, v.ven_NAME,
+       NVL(p.product_PRICE, 0), NVL(p.product_STOCK, 0), p.created_AT,
+    TO_NCHAR('vendor'), TO_NCHAR('ven_ID'), TO_NCHAR(v.ven_ID)
+FROM Products p
+JOIN Categories c ON p.category_ID = c.category_ID
+JOIN Vendors v ON p.ven_ID = v.ven_ID
+WHERE p.product_ID = 1
+UNION ALL
+SELECT p.product_ID, p.product_NAME, c.category_NAME, v.ven_NAME,
+       NVL(p.product_PRICE, 0), NVL(p.product_STOCK, 0), p.created_AT,
+    TO_NCHAR('vendor'), TO_NCHAR('ven_NAME'), TO_NCHAR(v.ven_NAME)
+FROM Products p
+JOIN Categories c ON p.category_ID = c.category_ID
+JOIN Vendors v ON p.ven_ID = v.ven_ID
+WHERE p.product_ID = 1
+UNION ALL
+SELECT p.product_ID, p.product_NAME, c.category_NAME, v.ven_NAME,
+       NVL(p.product_PRICE, 0), NVL(p.product_STOCK, 0), p.created_AT,
+    TO_NCHAR('vendor'), TO_NCHAR('ven_COUNTRY'), TO_NCHAR(v.ven_COUNTRY)
+FROM Products p
+JOIN Categories c ON p.category_ID = c.category_ID
+JOIN Vendors v ON p.ven_ID = v.ven_ID
+WHERE p.product_ID = 1
+UNION ALL
+SELECT p.product_ID, p.product_NAME, c.category_NAME, v.ven_NAME,
+       NVL(p.product_PRICE, 0), NVL(p.product_STOCK, 0), p.created_AT,
+    TO_NCHAR('vendor'), TO_NCHAR('ven_DESCRIPT'), TO_NCHAR(NVL(v.ven_DESCRIPT, ' '))
+FROM Products p
+JOIN Categories c ON p.category_ID = c.category_ID
+JOIN Vendors v ON p.ven_ID = v.ven_ID
+WHERE p.product_ID = 1
+
+-- Attributes (EAV -> key/value)
+UNION ALL
+SELECT p.product_ID, p.product_NAME, c.category_NAME, v.ven_NAME,
+       NVL(p.product_PRICE, 0), NVL(p.product_STOCK, 0), p.created_AT,
+    TO_NCHAR('attribute'), a.att_NAME, TO_NCHAR(DBMS_LOB.SUBSTR(pa.nominal, 2000, 1))
+FROM Products p
+JOIN ProductAttributes pa ON pa.product_ID = p.product_ID
+JOIN Attributes a ON a.att_ID = pa.att_ID
+JOIN Categories c ON p.category_ID = c.category_ID
+JOIN Vendors v ON p.ven_ID = v.ven_ID
+WHERE p.product_ID = 1
+
+-- Media
+UNION ALL
+SELECT p.product_ID, p.product_NAME, c.category_NAME, v.ven_NAME,
+       NVL(p.product_PRICE, 0), NVL(p.product_STOCK, 0), p.created_AT,
+    TO_NCHAR('media'), TO_NCHAR('media_URL'), TO_NCHAR(pm.media_URL)
+FROM Products p
+JOIN ProductMedia pm ON pm.product_ID = p.product_ID
+JOIN Categories c ON p.category_ID = c.category_ID
+JOIN Vendors v ON p.ven_ID = v.ven_ID
+WHERE p.product_ID = 1
+UNION ALL
+SELECT p.product_ID, p.product_NAME, c.category_NAME, v.ven_NAME,
+       NVL(p.product_PRICE, 0), NVL(p.product_STOCK, 0), p.created_AT,
+    TO_NCHAR('media'), TO_NCHAR('media_TYPE'), TO_NCHAR(pm.media_TYPE)
+FROM Products p
+JOIN ProductMedia pm ON pm.product_ID = p.product_ID
+JOIN Categories c ON p.category_ID = c.category_ID
+JOIN Vendors v ON p.ven_ID = v.ven_ID
+WHERE p.product_ID = 1
+UNION ALL
+SELECT p.product_ID, p.product_NAME, c.category_NAME, v.ven_NAME,
+       NVL(p.product_PRICE, 0), NVL(p.product_STOCK, 0), p.created_AT,
+    TO_NCHAR('media'), TO_NCHAR('is_primary'), TO_NCHAR(NVL(pm.is_primary, 0))
+FROM Products p
+JOIN ProductMedia pm ON pm.product_ID = p.product_ID
+JOIN Categories c ON p.category_ID = c.category_ID
+JOIN Vendors v ON p.ven_ID = v.ven_ID
+WHERE p.product_ID = 1
+UNION ALL
+SELECT p.product_ID, p.product_NAME, c.category_NAME, v.ven_NAME,
+       NVL(p.product_PRICE, 0), NVL(p.product_STOCK, 0), p.created_AT,
+    TO_NCHAR('media'), TO_NCHAR('display_order'), TO_NCHAR(NVL(pm.display_order, 0))
+FROM Products p
+JOIN ProductMedia pm ON pm.product_ID = p.product_ID
+JOIN Categories c ON p.category_ID = c.category_ID
+JOIN Vendors v ON p.ven_ID = v.ven_ID
+WHERE p.product_ID = 1
+UNION ALL
+SELECT p.product_ID, p.product_NAME, c.category_NAME, v.ven_NAME,
+       NVL(p.product_PRICE, 0), NVL(p.product_STOCK, 0), p.created_AT,
+    TO_NCHAR('media'), TO_NCHAR('alt_text'), TO_NCHAR(NVL(pm.alt_text, ' '))
+FROM Products p
+JOIN ProductMedia pm ON pm.product_ID = p.product_ID
+JOIN Categories c ON p.category_ID = c.category_ID
+JOIN Vendors v ON p.ven_ID = v.ven_ID
+WHERE p.product_ID = 1
+
+-- Reviews
+UNION ALL
+SELECT p.product_ID, p.product_NAME, c.category_NAME, v.ven_NAME,
+       NVL(p.product_PRICE, 0), NVL(p.product_STOCK, 0), p.created_AT,
+    TO_NCHAR('review'), TO_NCHAR('rew_ID'), TO_NCHAR(r.rew_ID)
+FROM Products p
+JOIN Review r ON r.product_ID = p.product_ID
+JOIN Categories c ON p.category_ID = c.category_ID
+JOIN Vendors v ON p.ven_ID = v.ven_ID
+WHERE p.product_ID = 1
+UNION ALL
+SELECT p.product_ID, p.product_NAME, c.category_NAME, v.ven_NAME,
+       NVL(p.product_PRICE, 0), NVL(p.product_STOCK, 0), p.created_AT,
+    TO_NCHAR('review'), TO_NCHAR('rew_RATING'), TO_NCHAR(r.rew_RATING)
+FROM Products p
+JOIN Review r ON r.product_ID = p.product_ID
+JOIN Categories c ON p.category_ID = c.category_ID
+JOIN Vendors v ON p.ven_ID = v.ven_ID
+WHERE p.product_ID = 1
+UNION ALL
+SELECT p.product_ID, p.product_NAME, c.category_NAME, v.ven_NAME,
+       NVL(p.product_PRICE, 0), NVL(p.product_STOCK, 0), p.created_AT,
+    TO_NCHAR('review'), TO_NCHAR('rew_COMMENT'), TO_NCHAR(NVL(r.rew_COMMENT, ' '))
+FROM Products p
+JOIN Review r ON r.product_ID = p.product_ID
+JOIN Categories c ON p.category_ID = c.category_ID
+JOIN Vendors v ON p.ven_ID = v.ven_ID
+WHERE p.product_ID = 1
+UNION ALL
+SELECT p.product_ID, p.product_NAME, c.category_NAME, v.ven_NAME,
+       NVL(p.product_PRICE, 0), NVL(p.product_STOCK, 0), p.created_AT,
+    TO_NCHAR('review'), TO_NCHAR('rew_DATE'), TO_NCHAR(TO_CHAR(r.rew_DATE, 'YYYY-MM-DD"T"HH24:MI:SS'))
+FROM Products p
+JOIN Review r ON r.product_ID = p.product_ID
+JOIN Categories c ON p.category_ID = c.category_ID
+JOIN Vendors v ON p.ven_ID = v.ven_ID
+WHERE p.product_ID = 1
+
+-- Wishlist (users who saved the product)
+UNION ALL
+SELECT p.product_ID, p.product_NAME, c.category_NAME, v.ven_NAME,
+       NVL(p.product_PRICE, 0), NVL(p.product_STOCK, 0), p.created_AT,
+    TO_NCHAR('wishlist'), TO_NCHAR('wishlist_ID'), TO_NCHAR(w.wishlist_ID)
+FROM Products p
+JOIN Wishlist w ON w.product_ID = p.product_ID
+JOIN Categories c ON p.category_ID = c.category_ID
+JOIN Vendors v ON p.ven_ID = v.ven_ID
+WHERE p.product_ID = 1
+UNION ALL
+SELECT p.product_ID, p.product_NAME, c.category_NAME, v.ven_NAME,
+       NVL(p.product_PRICE, 0), NVL(p.product_STOCK, 0), p.created_AT,
+    TO_NCHAR('wishlist'), TO_NCHAR('user_ID'), TO_NCHAR(w.user_ID)
+FROM Products p
+JOIN Wishlist w ON w.product_ID = p.product_ID
+JOIN Categories c ON p.category_ID = c.category_ID
+JOIN Vendors v ON p.ven_ID = v.ven_ID
+WHERE p.product_ID = 1
+
+-- Orders and Order Items involving this product
+UNION ALL
+SELECT p.product_ID, p.product_NAME, c.category_NAME, v.ven_NAME,
+       NVL(p.product_PRICE, 0), NVL(p.product_STOCK, 0), p.created_AT,
+    TO_NCHAR('order_item'), TO_NCHAR('OrderItems_ID'), TO_NCHAR(oi.OrderItems_ID)
+FROM Products p
+JOIN OrderItems oi ON oi.product_ID = p.product_ID
+JOIN Categories c ON p.category_ID = c.category_ID
+JOIN Vendors v ON p.ven_ID = v.ven_ID
+WHERE p.product_ID = 1
+UNION ALL
+SELECT p.product_ID, p.product_NAME, c.category_NAME, v.ven_NAME,
+       NVL(p.product_PRICE, 0), NVL(p.product_STOCK, 0), p.created_AT,
+    TO_NCHAR('order_item'), TO_NCHAR('order_ID'), TO_NCHAR(oi.order_ID)
+FROM Products p
+JOIN OrderItems oi ON oi.product_ID = p.product_ID
+JOIN Categories c ON p.category_ID = c.category_ID
+JOIN Vendors v ON p.ven_ID = v.ven_ID
+WHERE p.product_ID = 1
+UNION ALL
+SELECT p.product_ID, p.product_NAME, c.category_NAME, v.ven_NAME,
+       NVL(p.product_PRICE, 0), NVL(p.product_STOCK, 0), p.created_AT,
+    TO_NCHAR('order_item'), TO_NCHAR('quantity'), TO_NCHAR(oi.quantity)
+FROM Products p
+JOIN OrderItems oi ON oi.product_ID = p.product_ID
+JOIN Categories c ON p.category_ID = c.category_ID
+JOIN Vendors v ON p.ven_ID = v.ven_ID
+WHERE p.product_ID = 1
+UNION ALL
+SELECT p.product_ID, p.product_NAME, c.category_NAME, v.ven_NAME,
+       NVL(p.product_PRICE, 0), NVL(p.product_STOCK, 0), p.created_AT,
+    TO_NCHAR('order_item'), TO_NCHAR('price'), TO_NCHAR(oi.price)
+FROM Products p
+JOIN OrderItems oi ON oi.product_ID = p.product_ID
+JOIN Categories c ON p.category_ID = c.category_ID
+JOIN Vendors v ON p.ven_ID = v.ven_ID
+WHERE p.product_ID = 1
+
+-- Orders meta
+UNION ALL
+SELECT p.product_ID, p.product_NAME, c.category_NAME, v.ven_NAME,
+       NVL(p.product_PRICE, 0), NVL(p.product_STOCK, 0), p.created_AT,
+    TO_NCHAR('order'), TO_NCHAR('order_DATE'), TO_NCHAR(TO_CHAR(o.order_DATE, 'YYYY-MM-DD"T"HH24:MI:SS'))
+FROM Products p
+JOIN OrderItems oi ON oi.product_ID = p.product_ID
+JOIN Orders o ON o.order_ID = oi.order_ID
+JOIN Categories c ON p.category_ID = c.category_ID
+JOIN Vendors v ON p.ven_ID = v.ven_ID
+WHERE p.product_ID = 1
+UNION ALL
+SELECT p.product_ID, p.product_NAME, c.category_NAME, v.ven_NAME,
+       NVL(p.product_PRICE, 0), NVL(p.product_STOCK, 0), p.created_AT,
+    TO_NCHAR('order'), TO_NCHAR('order_STATUS_ID'), TO_NCHAR(NVL(o.order_STATUS_ID, 0))
+FROM Products p
+JOIN OrderItems oi ON oi.product_ID = p.product_ID
+JOIN Orders o ON o.order_ID = oi.order_ID
+JOIN Categories c ON p.category_ID = c.category_ID
+JOIN Vendors v ON p.ven_ID = v.ven_ID
+WHERE p.product_ID = 1
+UNION ALL
+SELECT p.product_ID, p.product_NAME, c.category_NAME, v.ven_NAME,
+       NVL(p.product_PRICE, 0), NVL(p.product_STOCK, 0), p.created_AT,
+    TO_NCHAR('order'), TO_NCHAR('order_AMOUNT'), TO_NCHAR(NVL(o.order_AMOUNT, 0))
+FROM Products p
+JOIN OrderItems oi ON oi.product_ID = p.product_ID
+JOIN Orders o ON o.order_ID = oi.order_ID
+JOIN Categories c ON p.category_ID = c.category_ID
+JOIN Vendors v ON p.ven_ID = v.ven_ID
+WHERE p.product_ID = 1
+
+-- Payments for those orders
+UNION ALL
+SELECT p.product_ID, p.product_NAME, c.category_NAME, v.ven_NAME,
+       NVL(p.product_PRICE, 0), NVL(p.product_STOCK, 0), p.created_AT,
+    TO_NCHAR('payment'), TO_NCHAR('payment_ID'), TO_NCHAR(pay.payment_ID)
+FROM Products p
+JOIN OrderItems oi ON oi.product_ID = p.product_ID
+JOIN Orders o ON o.order_ID = oi.order_ID
+JOIN Payments pay ON pay.order_ID = o.order_ID
+JOIN Categories c ON p.category_ID = c.category_ID
+JOIN Vendors v ON p.ven_ID = v.ven_ID
+WHERE p.product_ID = 1
+UNION ALL
+SELECT p.product_ID, p.product_NAME, c.category_NAME, v.ven_NAME,
+       NVL(p.product_PRICE, 0), NVL(p.product_STOCK, 0), p.created_AT,
+    TO_NCHAR('payment'), TO_NCHAR('payment_METHOD'), TO_NCHAR(pay.payment_METHOD)
+FROM Products p
+JOIN OrderItems oi ON oi.product_ID = p.product_ID
+JOIN Orders o ON o.order_ID = oi.order_ID
+JOIN Payments pay ON pay.order_ID = o.order_ID
+JOIN Categories c ON p.category_ID = c.category_ID
+JOIN Vendors v ON p.ven_ID = v.ven_ID
+WHERE p.product_ID = 1
+UNION ALL
+SELECT p.product_ID, p.product_NAME, c.category_NAME, v.ven_NAME,
+       NVL(p.product_PRICE, 0), NVL(p.product_STOCK, 0), p.created_AT,
+    TO_NCHAR('payment'), TO_NCHAR('payment_STATUS_ID'), TO_NCHAR(NVL(pay.payment_STATUS_ID, 0))
+FROM Products p
+JOIN OrderItems oi ON oi.product_ID = p.product_ID
+JOIN Orders o ON o.order_ID = oi.order_ID
+JOIN Payments pay ON pay.order_ID = o.order_ID
+JOIN Categories c ON p.category_ID = c.category_ID
+JOIN Vendors v ON p.ven_ID = v.ven_ID
+WHERE p.product_ID = 1
+UNION ALL
+SELECT p.product_ID, p.product_NAME, c.category_NAME, v.ven_NAME,
+       NVL(p.product_PRICE, 0), NVL(p.product_STOCK, 0), p.created_AT,
+    TO_NCHAR('payment'), TO_NCHAR('payment_AMOUNT'), TO_NCHAR(NVL(pay.payment_AMOUNT, 0))
+FROM Products p
+JOIN OrderItems oi ON oi.product_ID = p.product_ID
+JOIN Orders o ON o.order_ID = oi.order_ID
+JOIN Payments pay ON pay.order_ID = o.order_ID
+JOIN Categories c ON p.category_ID = c.category_ID
+JOIN Vendors v ON p.ven_ID = v.ven_ID
+WHERE p.product_ID = 1
+UNION ALL
+SELECT p.product_ID, p.product_NAME, c.category_NAME, v.ven_NAME,
+       NVL(p.product_PRICE, 0), NVL(p.product_STOCK, 0), p.created_AT,
+    TO_NCHAR('payment'), TO_NCHAR('currency'), TO_NCHAR(pay.currency)
+FROM Products p
+JOIN OrderItems oi ON oi.product_ID = p.product_ID
+JOIN Orders o ON o.order_ID = oi.order_ID
+JOIN Payments pay ON pay.order_ID = o.order_ID
+JOIN Categories c ON p.category_ID = c.category_ID
+JOIN Vendors v ON p.ven_ID = v.ven_ID
+WHERE p.product_ID = 1
+UNION ALL
+SELECT p.product_ID, p.product_NAME, c.category_NAME, v.ven_NAME,
+       NVL(p.product_PRICE, 0), NVL(p.product_STOCK, 0), p.created_AT,
+    TO_NCHAR('payment'), TO_NCHAR('transaction_ID'), TO_NCHAR(pay.transaction_ID)
+FROM Products p
+JOIN OrderItems oi ON oi.product_ID = p.product_ID
+JOIN Orders o ON o.order_ID = oi.order_ID
+JOIN Payments pay ON pay.order_ID = o.order_ID
+JOIN Categories c ON p.category_ID = c.category_ID
+JOIN Vendors v ON p.ven_ID = v.ven_ID
+WHERE p.product_ID = 1
+UNION ALL
+SELECT p.product_ID, p.product_NAME, c.category_NAME, v.ven_NAME,
+       NVL(p.product_PRICE, 0), NVL(p.product_STOCK, 0), p.created_AT,
+    TO_NCHAR('payment'), TO_NCHAR('payment_DATE'), TO_NCHAR(TO_CHAR(pay.payment_DATE, 'YYYY-MM-DD"T"HH24:MI:SS'))
+FROM Products p
+JOIN OrderItems oi ON oi.product_ID = p.product_ID
+JOIN Orders o ON o.order_ID = oi.order_ID
+JOIN Payments pay ON pay.order_ID = o.order_ID
+JOIN Categories c ON p.category_ID = c.category_ID
+JOIN Vendors v ON p.ven_ID = v.ven_ID
+WHERE p.product_ID = 1
+;
+
+COMMIT;
+PROMPT view_product_1_full_details created successfully
+
+-- =====================================================================
+-- Product Full Details (Generic for all products)
+-- =====================================================================
+-- Same as view_product_1_full_details, but without hardcoded product_ID.
+-- Filter by product_ID at query time: WHERE product_ID = :id
+
+CREATE OR REPLACE VIEW view_product_full_details AS
+-- Base: core scalar fields as key/value rows
+SELECT
+    p.product_ID,
+    p.product_NAME,
+    c.category_NAME,
+    v.ven_NAME AS vendor_name,
+    NVL(p.product_PRICE, 0) AS product_PRICE,
+    NVL(p.product_STOCK, 0) AS product_STOCK,
+    p.created_AT,
+    TO_NCHAR('product') AS section,
+    TO_NCHAR('product_NAME') AS item_key,
+    TO_NCHAR(p.product_NAME) AS item_value
+FROM Products p
+JOIN Categories c ON p.category_ID = c.category_ID
+JOIN Vendors v ON p.ven_ID = v.ven_ID
+UNION ALL
+SELECT p.product_ID, p.product_NAME, c.category_NAME, v.ven_NAME,
+       NVL(p.product_PRICE, 0), NVL(p.product_STOCK, 0), p.created_AT,
+    TO_NCHAR('product'), TO_NCHAR('product_PRICE'), TO_NCHAR(NVL(p.product_PRICE, 0))
+FROM Products p
+JOIN Categories c ON p.category_ID = c.category_ID
+JOIN Vendors v ON p.ven_ID = v.ven_ID
+UNION ALL
+SELECT p.product_ID, p.product_NAME, c.category_NAME, v.ven_NAME,
+       NVL(p.product_PRICE, 0), NVL(p.product_STOCK, 0), p.created_AT,
+    TO_NCHAR('product'), TO_NCHAR('product_STOCK'), TO_NCHAR(NVL(p.product_STOCK, 0))
+FROM Products p
+JOIN Categories c ON p.category_ID = c.category_ID
+JOIN Vendors v ON p.ven_ID = v.ven_ID
+UNION ALL
+SELECT p.product_ID, p.product_NAME, c.category_NAME, v.ven_NAME,
+       NVL(p.product_PRICE, 0), NVL(p.product_STOCK, 0), p.created_AT,
+    TO_NCHAR('product'), TO_NCHAR('is_featured'), TO_NCHAR(NVL(p.is_featured, 0))
+FROM Products p
+JOIN Categories c ON p.category_ID = c.category_ID
+JOIN Vendors v ON p.ven_ID = v.ven_ID
+UNION ALL
+SELECT p.product_ID, p.product_NAME, c.category_NAME, v.ven_NAME,
+       NVL(p.product_PRICE, 0), NVL(p.product_STOCK, 0), p.created_AT,
+    TO_NCHAR('product'), TO_NCHAR('is_active'), TO_NCHAR(NVL(p.is_active, 1))
+FROM Products p
+JOIN Categories c ON p.category_ID = c.category_ID
+JOIN Vendors v ON p.ven_ID = v.ven_ID
+UNION ALL
+SELECT p.product_ID, p.product_NAME, c.category_NAME, v.ven_NAME,
+       NVL(p.product_PRICE, 0), NVL(p.product_STOCK, 0), p.created_AT,
+    TO_NCHAR('product'), TO_NCHAR('product_DESCRIPT'), TO_NCHAR(DBMS_LOB.SUBSTR(p.product_DESCRIPT, 2000, 1))
+FROM Products p
+JOIN Categories c ON p.category_ID = c.category_ID
+JOIN Vendors v ON p.ven_ID = v.ven_ID
+UNION ALL
+SELECT p.product_ID, p.product_NAME, c.category_NAME, v.ven_NAME,
+       NVL(p.product_PRICE, 0), NVL(p.product_STOCK, 0), p.created_AT,
+    TO_NCHAR('product'), TO_NCHAR('updated_AT'), TO_NCHAR(TO_CHAR(p.updated_AT, 'YYYY-MM-DD"T"HH24:MI:SS'))
+FROM Products p
+JOIN Categories c ON p.category_ID = c.category_ID
+JOIN Vendors v ON p.ven_ID = v.ven_ID
+
+-- Category info
+UNION ALL
+SELECT p.product_ID, p.product_NAME, c.category_NAME, v.ven_NAME,
+       NVL(p.product_PRICE, 0), NVL(p.product_STOCK, 0), p.created_AT,
+    TO_NCHAR('category'), TO_NCHAR('category_ID'), TO_NCHAR(c.category_ID)
+FROM Products p
+JOIN Categories c ON p.category_ID = c.category_ID
+JOIN Vendors v ON p.ven_ID = v.ven_ID
+UNION ALL
+SELECT p.product_ID, p.product_NAME, c.category_NAME, v.ven_NAME,
+       NVL(p.product_PRICE, 0), NVL(p.product_STOCK, 0), p.created_AT,
+    TO_NCHAR('category'), TO_NCHAR('category_NAME'), TO_NCHAR(c.category_NAME)
+FROM Products p
+JOIN Categories c ON p.category_ID = c.category_ID
+JOIN Vendors v ON p.ven_ID = v.ven_ID
+
+-- Vendor info
+UNION ALL
+SELECT p.product_ID, p.product_NAME, c.category_NAME, v.ven_NAME,
+       NVL(p.product_PRICE, 0), NVL(p.product_STOCK, 0), p.created_AT,
+    TO_NCHAR('vendor'), TO_NCHAR('ven_ID'), TO_NCHAR(v.ven_ID)
+FROM Products p
+JOIN Categories c ON p.category_ID = c.category_ID
+JOIN Vendors v ON p.ven_ID = v.ven_ID
+UNION ALL
+SELECT p.product_ID, p.product_NAME, c.category_NAME, v.ven_NAME,
+       NVL(p.product_PRICE, 0), NVL(p.product_STOCK, 0), p.created_AT,
+    TO_NCHAR('vendor'), TO_NCHAR('ven_NAME'), TO_NCHAR(v.ven_NAME)
+FROM Products p
+JOIN Categories c ON p.category_ID = c.category_ID
+JOIN Vendors v ON p.ven_ID = v.ven_ID
+UNION ALL
+SELECT p.product_ID, p.product_NAME, c.category_NAME, v.ven_NAME,
+       NVL(p.product_PRICE, 0), NVL(p.product_STOCK, 0), p.created_AT,
+    TO_NCHAR('vendor'), TO_NCHAR('ven_COUNTRY'), TO_NCHAR(v.ven_COUNTRY)
+FROM Products p
+JOIN Categories c ON p.category_ID = c.category_ID
+JOIN Vendors v ON p.ven_ID = v.ven_ID
+UNION ALL
+SELECT p.product_ID, p.product_NAME, c.category_NAME, v.ven_NAME,
+       NVL(p.product_PRICE, 0), NVL(p.product_STOCK, 0), p.created_AT,
+    TO_NCHAR('vendor'), TO_NCHAR('ven_DESCRIPT'), TO_NCHAR(NVL(v.ven_DESCRIPT, ' '))
+FROM Products p
+JOIN Categories c ON p.category_ID = c.category_ID
+JOIN Vendors v ON p.ven_ID = v.ven_ID
+
+-- Attributes (EAV -> key/value)
+UNION ALL
+SELECT p.product_ID, p.product_NAME, c.category_NAME, v.ven_NAME,
+       NVL(p.product_PRICE, 0), NVL(p.product_STOCK, 0), p.created_AT,
+    TO_NCHAR('attribute'), a.att_NAME, TO_NCHAR(DBMS_LOB.SUBSTR(pa.nominal, 2000, 1))
+FROM Products p
+JOIN ProductAttributes pa ON pa.product_ID = p.product_ID
+JOIN Attributes a ON a.att_ID = pa.att_ID
+JOIN Categories c ON p.category_ID = c.category_ID
+JOIN Vendors v ON p.ven_ID = v.ven_ID
+
+-- Media
+UNION ALL
+SELECT p.product_ID, p.product_NAME, c.category_NAME, v.ven_NAME,
+       NVL(p.product_PRICE, 0), NVL(p.product_STOCK, 0), p.created_AT,
+    TO_NCHAR('media'), TO_NCHAR('media_URL'), TO_NCHAR(pm.media_URL)
+FROM Products p
+JOIN ProductMedia pm ON pm.product_ID = p.product_ID
+JOIN Categories c ON p.category_ID = c.category_ID
+JOIN Vendors v ON p.ven_ID = v.ven_ID
+UNION ALL
+SELECT p.product_ID, p.product_NAME, c.category_NAME, v.ven_NAME,
+       NVL(p.product_PRICE, 0), NVL(p.product_STOCK, 0), p.created_AT,
+    TO_NCHAR('media'), TO_NCHAR('media_TYPE'), TO_NCHAR(pm.media_TYPE)
+FROM Products p
+JOIN ProductMedia pm ON pm.product_ID = p.product_ID
+JOIN Categories c ON p.category_ID = c.category_ID
+JOIN Vendors v ON p.ven_ID = v.ven_ID
+UNION ALL
+SELECT p.product_ID, p.product_NAME, c.category_NAME, v.ven_NAME,
+       NVL(p.product_PRICE, 0), NVL(p.product_STOCK, 0), p.created_AT,
+    TO_NCHAR('media'), TO_NCHAR('is_primary'), TO_NCHAR(NVL(pm.is_primary, 0))
+FROM Products p
+JOIN ProductMedia pm ON pm.product_ID = p.product_ID
+JOIN Categories c ON p.category_ID = c.category_ID
+JOIN Vendors v ON p.ven_ID = v.ven_ID
+UNION ALL
+SELECT p.product_ID, p.product_NAME, c.category_NAME, v.ven_NAME,
+       NVL(p.product_PRICE, 0), NVL(p.product_STOCK, 0), p.created_AT,
+    TO_NCHAR('media'), TO_NCHAR('display_order'), TO_NCHAR(NVL(pm.display_order, 0))
+FROM Products p
+JOIN ProductMedia pm ON pm.product_ID = p.product_ID
+JOIN Categories c ON p.category_ID = c.category_ID
+JOIN Vendors v ON p.ven_ID = v.ven_ID
+UNION ALL
+SELECT p.product_ID, p.product_NAME, c.category_NAME, v.ven_NAME,
+       NVL(p.product_PRICE, 0), NVL(p.product_STOCK, 0), p.created_AT,
+    TO_NCHAR('media'), TO_NCHAR('alt_text'), TO_NCHAR(NVL(pm.alt_text, ' '))
+FROM Products p
+JOIN ProductMedia pm ON pm.product_ID = p.product_ID
+JOIN Categories c ON p.category_ID = c.category_ID
+JOIN Vendors v ON p.ven_ID = v.ven_ID
+
+-- Reviews
+UNION ALL
+SELECT p.product_ID, p.product_NAME, c.category_NAME, v.ven_NAME,
+       NVL(p.product_PRICE, 0), NVL(p.product_STOCK, 0), p.created_AT,
+    TO_NCHAR('review'), TO_NCHAR('rew_ID'), TO_NCHAR(r.rew_ID)
+FROM Products p
+JOIN Review r ON r.product_ID = p.product_ID
+JOIN Categories c ON p.category_ID = c.category_ID
+JOIN Vendors v ON p.ven_ID = v.ven_ID
+UNION ALL
+SELECT p.product_ID, p.product_NAME, c.category_NAME, v.ven_NAME,
+       NVL(p.product_PRICE, 0), NVL(p.product_STOCK, 0), p.created_AT,
+    TO_NCHAR('review'), TO_NCHAR('rew_RATING'), TO_NCHAR(r.rew_RATING)
+FROM Products p
+JOIN Review r ON r.product_ID = p.product_ID
+JOIN Categories c ON p.category_ID = c.category_ID
+JOIN Vendors v ON p.ven_ID = v.ven_ID
+UNION ALL
+SELECT p.product_ID, p.product_NAME, c.category_NAME, v.ven_NAME,
+       NVL(p.product_PRICE, 0), NVL(p.product_STOCK, 0), p.created_AT,
+    TO_NCHAR('review'), TO_NCHAR('rew_COMMENT'), TO_NCHAR(NVL(r.rew_COMMENT, ' '))
+FROM Products p
+JOIN Review r ON r.product_ID = p.product_ID
+JOIN Categories c ON p.category_ID = c.category_ID
+JOIN Vendors v ON p.ven_ID = v.ven_ID
+UNION ALL
+SELECT p.product_ID, p.product_NAME, c.category_NAME, v.ven_NAME,
+       NVL(p.product_PRICE, 0), NVL(p.product_STOCK, 0), p.created_AT,
+    TO_NCHAR('review'), TO_NCHAR('rew_DATE'), TO_NCHAR(TO_CHAR(r.rew_DATE, 'YYYY-MM-DD"T"HH24:MI:SS'))
+FROM Products p
+JOIN Review r ON r.product_ID = p.product_ID
+JOIN Categories c ON p.category_ID = c.category_ID
+JOIN Vendors v ON p.ven_ID = v.ven_ID
+
+-- Wishlist
+UNION ALL
+SELECT p.product_ID, p.product_NAME, c.category_NAME, v.ven_NAME,
+       NVL(p.product_PRICE, 0), NVL(p.product_STOCK, 0), p.created_AT,
+    TO_NCHAR('wishlist'), TO_NCHAR('wishlist_ID'), TO_NCHAR(w.wishlist_ID)
+FROM Products p
+JOIN Wishlist w ON w.product_ID = p.product_ID
+JOIN Categories c ON p.category_ID = c.category_ID
+JOIN Vendors v ON p.ven_ID = v.ven_ID
+UNION ALL
+SELECT p.product_ID, p.product_NAME, c.category_NAME, v.ven_NAME,
+       NVL(p.product_PRICE, 0), NVL(p.product_STOCK, 0), p.created_AT,
+    TO_NCHAR('wishlist'), TO_NCHAR('user_ID'), TO_NCHAR(w.user_ID)
+FROM Products p
+JOIN Wishlist w ON w.product_ID = p.product_ID
+JOIN Categories c ON p.category_ID = c.category_ID
+JOIN Vendors v ON p.ven_ID = v.ven_ID
+
+-- Order items
+UNION ALL
+SELECT p.product_ID, p.product_NAME, c.category_NAME, v.ven_NAME,
+       NVL(p.product_PRICE, 0), NVL(p.product_STOCK, 0), p.created_AT,
+    TO_NCHAR('order_item'), TO_NCHAR('OrderItems_ID'), TO_NCHAR(oi.OrderItems_ID)
+FROM Products p
+JOIN OrderItems oi ON oi.product_ID = p.product_ID
+JOIN Categories c ON p.category_ID = c.category_ID
+JOIN Vendors v ON p.ven_ID = v.ven_ID
+UNION ALL
+SELECT p.product_ID, p.product_NAME, c.category_NAME, v.ven_NAME,
+       NVL(p.product_PRICE, 0), NVL(p.product_STOCK, 0), p.created_AT,
+    TO_NCHAR('order_item'), TO_NCHAR('order_ID'), TO_NCHAR(oi.order_ID)
+FROM Products p
+JOIN OrderItems oi ON oi.product_ID = p.product_ID
+JOIN Categories c ON p.category_ID = c.category_ID
+JOIN Vendors v ON p.ven_ID = v.ven_ID
+UNION ALL
+SELECT p.product_ID, p.product_NAME, c.category_NAME, v.ven_NAME,
+       NVL(p.product_PRICE, 0), NVL(p.product_STOCK, 0), p.created_AT,
+    TO_NCHAR('order_item'), TO_NCHAR('quantity'), TO_NCHAR(oi.quantity)
+FROM Products p
+JOIN OrderItems oi ON oi.product_ID = p.product_ID
+JOIN Categories c ON p.category_ID = c.category_ID
+JOIN Vendors v ON p.ven_ID = v.ven_ID
+UNION ALL
+SELECT p.product_ID, p.product_NAME, c.category_NAME, v.ven_NAME,
+       NVL(p.product_PRICE, 0), NVL(p.product_STOCK, 0), p.created_AT,
+    TO_NCHAR('order_item'), TO_NCHAR('price'), TO_NCHAR(oi.price)
+FROM Products p
+JOIN OrderItems oi ON oi.product_ID = p.product_ID
+JOIN Categories c ON p.category_ID = c.category_ID
+JOIN Vendors v ON p.ven_ID = v.ven_ID
+
+-- Orders meta
+UNION ALL
+SELECT p.product_ID, p.product_NAME, c.category_NAME, v.ven_NAME,
+       NVL(p.product_PRICE, 0), NVL(p.product_STOCK, 0), p.created_AT,
+    TO_NCHAR('order'), TO_NCHAR('order_DATE'), TO_NCHAR(TO_CHAR(o.order_DATE, 'YYYY-MM-DD"T"HH24:MI:SS'))
+FROM Products p
+JOIN OrderItems oi ON oi.product_ID = p.product_ID
+JOIN Orders o ON o.order_ID = oi.order_ID
+JOIN Categories c ON p.category_ID = c.category_ID
+JOIN Vendors v ON p.ven_ID = v.ven_ID
+UNION ALL
+SELECT p.product_ID, p.product_NAME, c.category_NAME, v.ven_NAME,
+       NVL(p.product_PRICE, 0), NVL(p.product_STOCK, 0), p.created_AT,
+    TO_NCHAR('order'), TO_NCHAR('order_STATUS_ID'), TO_NCHAR(NVL(o.order_STATUS_ID, 0))
+FROM Products p
+JOIN OrderItems oi ON oi.product_ID = p.product_ID
+JOIN Orders o ON o.order_ID = oi.order_ID
+JOIN Categories c ON p.category_ID = c.category_ID
+JOIN Vendors v ON p.ven_ID = v.ven_ID
+UNION ALL
+SELECT p.product_ID, p.product_NAME, c.category_NAME, v.ven_NAME,
+       NVL(p.product_PRICE, 0), NVL(p.product_STOCK, 0), p.created_AT,
+    TO_NCHAR('order'), TO_NCHAR('order_AMOUNT'), TO_NCHAR(NVL(o.order_AMOUNT, 0))
+FROM Products p
+JOIN OrderItems oi ON oi.product_ID = p.product_ID
+JOIN Orders o ON o.order_ID = oi.order_ID
+JOIN Categories c ON p.category_ID = c.category_ID
+JOIN Vendors v ON p.ven_ID = v.ven_ID
+
+-- Payments for those orders
+UNION ALL
+SELECT p.product_ID, p.product_NAME, c.category_NAME, v.ven_NAME,
+       NVL(p.product_PRICE, 0), NVL(p.product_STOCK, 0), p.created_AT,
+    TO_NCHAR('payment'), TO_NCHAR('payment_ID'), TO_NCHAR(pay.payment_ID)
+FROM Products p
+JOIN OrderItems oi ON oi.product_ID = p.product_ID
+JOIN Orders o ON o.order_ID = oi.order_ID
+JOIN Payments pay ON pay.order_ID = o.order_ID
+JOIN Categories c ON p.category_ID = c.category_ID
+JOIN Vendors v ON p.ven_ID = v.ven_ID
+UNION ALL
+SELECT p.product_ID, p.product_NAME, c.category_NAME, v.ven_NAME,
+       NVL(p.product_PRICE, 0), NVL(p.product_STOCK, 0), p.created_AT,
+    TO_NCHAR('payment'), TO_NCHAR('payment_METHOD'), TO_NCHAR(pay.payment_METHOD)
+FROM Products p
+JOIN OrderItems oi ON oi.product_ID = p.product_ID
+JOIN Orders o ON o.order_ID = oi.order_ID
+JOIN Payments pay ON pay.order_ID = o.order_ID
+JOIN Categories c ON p.category_ID = c.category_ID
+JOIN Vendors v ON p.ven_ID = v.ven_ID
+UNION ALL
+SELECT p.product_ID, p.product_NAME, c.category_NAME, v.ven_NAME,
+       NVL(p.product_PRICE, 0), NVL(p.product_STOCK, 0), p.created_AT,
+    TO_NCHAR('payment'), TO_NCHAR('payment_STATUS_ID'), TO_NCHAR(NVL(pay.payment_STATUS_ID, 0))
+FROM Products p
+JOIN OrderItems oi ON oi.product_ID = p.product_ID
+JOIN Orders o ON o.order_ID = oi.order_ID
+JOIN Payments pay ON pay.order_ID = o.order_ID
+JOIN Categories c ON p.category_ID = c.category_ID
+JOIN Vendors v ON p.ven_ID = v.ven_ID
+UNION ALL
+SELECT p.product_ID, p.product_NAME, c.category_NAME, v.ven_NAME,
+       NVL(p.product_PRICE, 0), NVL(p.product_STOCK, 0), p.created_AT,
+    TO_NCHAR('payment'), TO_NCHAR('payment_AMOUNT'), TO_NCHAR(NVL(pay.payment_AMOUNT, 0))
+FROM Products p
+JOIN OrderItems oi ON oi.product_ID = p.product_ID
+JOIN Orders o ON o.order_ID = oi.order_ID
+JOIN Payments pay ON pay.order_ID = o.order_ID
+JOIN Categories c ON p.category_ID = c.category_ID
+JOIN Vendors v ON p.ven_ID = v.ven_ID
+UNION ALL
+SELECT p.product_ID, p.product_NAME, c.category_NAME, v.ven_NAME,
+       NVL(p.product_PRICE, 0), NVL(p.product_STOCK, 0), p.created_AT,
+    TO_NCHAR('payment'), TO_NCHAR('currency'), TO_NCHAR(pay.currency)
+FROM Products p
+JOIN OrderItems oi ON oi.product_ID = p.product_ID
+JOIN Orders o ON o.order_ID = oi.order_ID
+JOIN Payments pay ON pay.order_ID = o.order_ID
+JOIN Categories c ON p.category_ID = c.category_ID
+JOIN Vendors v ON p.ven_ID = v.ven_ID
+UNION ALL
+SELECT p.product_ID, p.product_NAME, c.category_NAME, v.ven_NAME,
+       NVL(p.product_PRICE, 0), NVL(p.product_STOCK, 0), p.created_AT,
+    TO_NCHAR('payment'), TO_NCHAR('transaction_ID'), TO_NCHAR(pay.transaction_ID)
+FROM Products p
+JOIN OrderItems oi ON oi.product_ID = p.product_ID
+JOIN Orders o ON o.order_ID = oi.order_ID
+JOIN Payments pay ON pay.order_ID = o.order_ID
+JOIN Categories c ON p.category_ID = c.category_ID
+JOIN Vendors v ON p.ven_ID = v.ven_ID
+UNION ALL
+SELECT p.product_ID, p.product_NAME, c.category_NAME, v.ven_NAME,
+       NVL(p.product_PRICE, 0), NVL(p.product_STOCK, 0), p.created_AT,
+    TO_NCHAR('payment'), TO_NCHAR('payment_DATE'), TO_NCHAR(TO_CHAR(pay.payment_DATE, 'YYYY-MM-DD"T"HH24:MI:SS'))
+FROM Products p
+JOIN OrderItems oi ON oi.product_ID = p.product_ID
+JOIN Orders o ON o.order_ID = oi.order_ID
+JOIN Payments pay ON pay.order_ID = o.order_ID
+JOIN Categories c ON p.category_ID = c.category_ID
+JOIN Vendors v ON p.ven_ID = v.ven_ID
+;
+
+COMMIT;
+PROMPT view_product_full_details created successfully

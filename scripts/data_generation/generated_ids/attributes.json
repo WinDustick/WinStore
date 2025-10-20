@@ -1,0 +1,586 @@
+[
+    {
+        "id": 1,
+        "name": "Video Core Next"
+    },
+    {
+        "id": 2,
+        "name": "Outputs"
+    },
+    {
+        "id": 3,
+        "name": "Multiplier Unlocked"
+    },
+    {
+        "id": 4,
+        "name": "Connectivity"
+    },
+    {
+        "id": 5,
+        "name": "Slot Width"
+    },
+    {
+        "id": 6,
+        "name": "Texture Rate"
+    },
+    {
+        "id": 7,
+        "name": "Bundled Cooler"
+    },
+    {
+        "id": 8,
+        "name": "FP64 (double)"
+    },
+    {
+        "id": 9,
+        "name": "L1 Cache"
+    },
+    {
+        "id": 10,
+        "name": "Successor"
+    },
+    {
+        "id": 11,
+        "name": "TMUs"
+    },
+    {
+        "id": 12,
+        "name": "Notes"
+    },
+    {
+        "id": 13,
+        "name": "Game Clock"
+    },
+    {
+        "id": 14,
+        "name": "Memory Clock"
+    },
+    {
+        "id": 15,
+        "name": "Market"
+    },
+    {
+        "id": 16,
+        "name": "Wattage"
+    },
+    {
+        "id": 17,
+        "name": "# of Threads"
+    },
+    {
+        "id": 18,
+        "name": "PL2"
+    },
+    {
+        "id": 19,
+        "name": "Tensor Cores"
+    },
+    {
+        "id": 20,
+        "name": "OpenCL"
+    },
+    {
+        "id": 21,
+        "name": "NVDEC"
+    },
+    {
+        "id": 22,
+        "name": "PCIe Slots"
+    },
+    {
+        "id": 23,
+        "name": "SM Count"
+    },
+    {
+        "id": 24,
+        "name": "Hybrid Cores"
+    },
+    {
+        "id": 25,
+        "name": "System DMA"
+    },
+    {
+        "id": 26,
+        "name": "GPU Name"
+    },
+    {
+        "id": 27,
+        "name": "Bandwidth"
+    },
+    {
+        "id": 28,
+        "name": "Efficiency Rating"
+    },
+    {
+        "id": 29,
+        "name": "Production Status"
+    },
+    {
+        "id": 30,
+        "name": "TDP"
+    },
+    {
+        "id": 31,
+        "name": "E-Core L1"
+    },
+    {
+        "id": 32,
+        "name": "Memory Support"
+    },
+    {
+        "id": 33,
+        "name": "Cache L1"
+    },
+    {
+        "id": 34,
+        "name": "PPT"
+    },
+    {
+        "id": 35,
+        "name": "SMP # CPUs"
+    },
+    {
+        "id": 36,
+        "name": "Display Core Next"
+    },
+    {
+        "id": 37,
+        "name": "Rated Speed"
+    },
+    {
+        "id": 38,
+        "name": "Shader ISA"
+    },
+    {
+        "id": 39,
+        "name": "Voltage (V)"
+    },
+    {
+        "id": 40,
+        "name": "Launch Price"
+    },
+    {
+        "id": 41,
+        "name": "Secondary PCIe"
+    },
+    {
+        "id": 42,
+        "name": "Write Speed"
+    },
+    {
+        "id": 43,
+        "name": "Integrated Graphics"
+    },
+    {
+        "id": 44,
+        "name": "Radiator Size"
+    },
+    {
+        "id": 45,
+        "name": "Die Size"
+    },
+    {
+        "id": 46,
+        "name": "Architecture"
+    },
+    {
+        "id": 47,
+        "name": "PL1"
+    },
+    {
+        "id": 48,
+        "name": "Power Connectors"
+    },
+    {
+        "id": 49,
+        "name": "Cores"
+    },
+    {
+        "id": 50,
+        "name": "Capacity (GB)"
+    },
+    {
+        "id": 51,
+        "name": "Socket"
+    },
+    {
+        "id": 52,
+        "name": "OpenGL"
+    },
+    {
+        "id": 53,
+        "name": "GPU Clock"
+    },
+    {
+        "id": 54,
+        "name": "Length"
+    },
+    {
+        "id": 55,
+        "name": "Bus Width"
+    },
+    {
+        "id": 56,
+        "name": "Timings"
+    },
+    {
+        "id": 57,
+        "name": "MCD Density"
+    },
+    {
+        "id": 58,
+        "name": "Foundry"
+    },
+    {
+        "id": 59,
+        "name": "Chipsets"
+    },
+    {
+        "id": 60,
+        "name": "DDR4 Speed"
+    },
+    {
+        "id": 61,
+        "name": "tCaseMax"
+    },
+    {
+        "id": 62,
+        "name": "FP16 (half)"
+    },
+    {
+        "id": 63,
+        "name": "Max Memory"
+    },
+    {
+        "id": 64,
+        "name": "Pixel Rate"
+    },
+    {
+        "id": 65,
+        "name": "Fan RPM"
+    },
+    {
+        "id": 66,
+        "name": "Board Number"
+    },
+    {
+        "id": 67,
+        "name": "GPU Variant"
+    },
+    {
+        "id": 68,
+        "name": "Module Count"
+    },
+    {
+        "id": 69,
+        "name": "# of Cores"
+    },
+    {
+        "id": 70,
+        "name": "Speed (MT/s)"
+    },
+    {
+        "id": 71,
+        "name": "NVENC"
+    },
+    {
+        "id": 72,
+        "name": "tJMax"
+    },
+    {
+        "id": 73,
+        "name": "Chip Package"
+    },
+    {
+        "id": 74,
+        "name": "Release Date"
+    },
+    {
+        "id": 75,
+        "name": "GCD Density"
+    },
+    {
+        "id": 76,
+        "name": "Memory Size"
+    },
+    {
+        "id": 77,
+        "name": "CUDA"
+    },
+    {
+        "id": 78,
+        "name": "Process Size"
+    },
+    {
+        "id": 79,
+        "name": "Capacity"
+    },
+    {
+        "id": 80,
+        "name": "Announced"
+    },
+    {
+        "id": 81,
+        "name": "Form Factor"
+    },
+    {
+        "id": 82,
+        "name": "RT Cores"
+    },
+    {
+        "id": 83,
+        "name": "ROPs"
+    },
+    {
+        "id": 84,
+        "name": "Base Clock"
+    },
+    {
+        "id": 85,
+        "name": "Noise Level"
+    },
+    {
+        "id": 86,
+        "name": "PCI-Express"
+    },
+    {
+        "id": 87,
+        "name": "MCD Transistors"
+    },
+    {
+        "id": 88,
+        "name": "Availability"
+    },
+    {
+        "id": 89,
+        "name": "Bundled Heatsink"
+    },
+    {
+        "id": 90,
+        "name": "PL2 Tau Limit"
+    },
+    {
+        "id": 91,
+        "name": "Features"
+    },
+    {
+        "id": 92,
+        "name": "Read Speed"
+    },
+    {
+        "id": 93,
+        "name": "DirectX"
+    },
+    {
+        "id": 94,
+        "name": "Compute Units"
+    },
+    {
+        "id": 95,
+        "name": "L3 Cache"
+    },
+    {
+        "id": 96,
+        "name": "Bus Interface"
+    },
+    {
+        "id": 97,
+        "name": "Chipset"
+    },
+    {
+        "id": 98,
+        "name": "Recommended Gaming Resolutions"
+    },
+    {
+        "id": 99,
+        "name": "Modularity"
+    },
+    {
+        "id": 100,
+        "name": "Generation"
+    },
+    {
+        "id": 101,
+        "name": "Cache L2"
+    },
+    {
+        "id": 102,
+        "name": "Suggested PSU"
+    },
+    {
+        "id": 103,
+        "name": "ECC Memory"
+    },
+    {
+        "id": 104,
+        "name": "I/O Process Size"
+    },
+    {
+        "id": 105,
+        "name": "L2 Cache"
+    },
+    {
+        "id": 106,
+        "name": "GCD Transistors"
+    },
+    {
+        "id": 107,
+        "name": "Graphics/Compute"
+    },
+    {
+        "id": 108,
+        "name": "Package"
+    },
+    {
+        "id": 109,
+        "name": "Process Type"
+    },
+    {
+        "id": 110,
+        "name": "DDR5 Speed"
+    },
+    {
+        "id": 111,
+        "name": "Type"
+    },
+    {
+        "id": 112,
+        "name": "I/O Die Size"
+    },
+    {
+        "id": 113,
+        "name": "Memory Bus"
+    },
+    {
+        "id": 114,
+        "name": "Memory Slots"
+    },
+    {
+        "id": 115,
+        "name": "Cache L3"
+    },
+    {
+        "id": 116,
+        "name": "MCD Process"
+    },
+    {
+        "id": 117,
+        "name": "Predecessor"
+    },
+    {
+        "id": 118,
+        "name": "Transistors"
+    },
+    {
+        "id": 119,
+        "name": "E-Core L2"
+    },
+    {
+        "id": 120,
+        "name": "Width"
+    },
+    {
+        "id": 121,
+        "name": "FP32 (float)"
+    },
+    {
+        "id": 122,
+        "name": "Codename"
+    },
+    {
+        "id": 123,
+        "name": "Memory Type"
+    },
+    {
+        "id": 124,
+        "name": "Current Price"
+    },
+    {
+        "id": 125,
+        "name": "Shading Units"
+    },
+    {
+        "id": 126,
+        "name": "Production"
+    },
+    {
+        "id": 127,
+        "name": "Profile Type"
+    },
+    {
+        "id": 128,
+        "name": "Matrix Cores"
+    },
+    {
+        "id": 129,
+        "name": "GCD Die Size"
+    },
+    {
+        "id": 130,
+        "name": "Height"
+    },
+    {
+        "id": 131,
+        "name": "Vulkan"
+    },
+    {
+        "id": 132,
+        "name": "L0 Cache"
+    },
+    {
+        "id": 133,
+        "name": "Shader Model"
+    },
+    {
+        "id": 134,
+        "name": "Graphics Processor"
+    },
+    {
+        "id": 135,
+        "name": "Shader Clock"
+    },
+    {
+        "id": 136,
+        "name": "Turbo Clock"
+    },
+    {
+        "id": 137,
+        "name": "MCD Die Size"
+    },
+    {
+        "id": 138,
+        "name": "Boost Clock"
+    },
+    {
+        "id": 139,
+        "name": "Frequency"
+    },
+    {
+        "id": 140,
+        "name": "Interface"
+    },
+    {
+        "id": 141,
+        "name": "Density"
+    },
+    {
+        "id": 142,
+        "name": "Memory Bandwidth"
+    },
+    {
+        "id": 143,
+        "name": "Multiplier"
+    },
+    {
+        "id": 144,
+        "name": "E-Core Frequency"
+    },
+    {
+        "id": 145,
+        "name": "VRAM"
+    },
+    {
+        "id": 146,
+        "name": "Part#"
+    }
+]

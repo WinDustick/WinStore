@@ -49,7 +49,7 @@ services:
       dockerfile: Dockerfile
     container_name: winstore_backend
     restart: unless-stopped
-    profiles: ["mssql", "oracle"]
+    profiles: ["app"]
     environment:
       # General
       - SECRET_KEY=${SECRET_KEY:-django-insecure-default-key-change-me}
@@ -88,7 +88,7 @@ services:
     image: directus/directus:latest
     container_name: winstore_directus
     restart: unless-stopped
-    profiles: ["mssql", "oracle"]
+    profiles: ["app"]
     ports:
       - "8055:8055"
     environment:
@@ -115,7 +115,7 @@ services:
     image: nginx:alpine
     container_name: winstore_nginx
     restart: unless-stopped
-    profiles: ["mssql", "oracle"]
+    profiles: ["app"]
     ports:
       - "80:80"
     volumes:

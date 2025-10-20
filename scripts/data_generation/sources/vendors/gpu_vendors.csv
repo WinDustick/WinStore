@@ -1,0 +1,21 @@
+Manufacturer,Status,Country,AMD Partner,Intel Partner,NVIDIA Partner,Basic Tier,Premium Tier,Notes
+Acer,Public,Taiwan,No,No,Yes,,"Predator",
+ASRock,Public,Taiwan,Yes,Yes,No,"Challenger","Phantom Gaming >> OC Formula >> Taichi",
+Asus,Public,Taiwan,Yes,No,Yes,"Dual","TUF Gaming >> ROG Strix",
+Biostar,Public,Taiwan,Yes,No,No,"-","Extreme",
+Colorful,Private,China,No,No,Yes,"Battle Ax","iGame",
+EVGA*,Private,U.S.A.,No,No,Yes,"XC3","FTW3 >> Kingpin","*Pulled out of the new gen. graphics cards market in Sep 2022"
+Gigabyte,Public,Taiwan,Yes,Yes,Yes,"Eagle","Gaming >> AORUS Master / Elite / eXtreme",
+Gunnir,Private,China,No,Yes,No,"Index","Photon",
+Inno3D,Private,China,No,No,Yes,"X2/X3","iChill",
+MSI,Public,"",Yes,No,Yes,"Ventus","Gaming Trio >> SUPRIM",
+Palit,Private,Taiwan,No,No,Yes,"GamingPro","GameRock",
+Gainward,"",Taiwan,No,No,Yes,"Ghost/Pegasus","Phoenix >> Phantom",
+GALAX**,"",Taiwan,No,No,Yes,"General","EX Gamer >> SG >> HOF",
+KFA2**,"",Taiwan,No,No,Yes,"General","EX Gamer >> SG >> HOF","**KFA2 is the European brand of GALAX"
+PNY,Private,U.S.A.,No,No,Yes,"","XLR8",
+PowerColor,Public,Taiwan,Yes,No,No,"Fighter","Hellhound (RedDragon) >> Red Devil",
+Sapphire,Private,Hong Kong,Yes,No,No,"Pulse","Nitro+ >> Toxic",
+XFX,Public,Hong Kong,Yes,No,No,"SWFT","QICK >> MERC",
+Yeston,Private,China,Yes,No,No,"GAEA","GAMEACE",
+Zotac,Private,Hong Kong,No,No,Yes,"Twin Edge","Trinity >> AMP!",

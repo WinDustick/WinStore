@@ -1,0 +1,65 @@
+Computer cooling systems
+
+This list is incomplete; you can help by adding missing items. (August 2024)
+
+List of computer cooling system manufacturers:
+
+    Aigo
+    AMD
+    Antec
+    Arctic GmbH
+    Asetek
+    Asus
+    be quiet!
+    Cooler Master
+    Corsair
+    Deepcool
+    ebm-papst
+    Fractal Design
+    Foxconn
+    GELID Solutions
+    Gigabyte Technology
+    Hama Photo
+    Intel
+    Nidec
+    Noctua
+    NZXT
+    MSI
+    Saint-Gobain (tubing system)
+    Thermalright
+    Thermaltake
+    Vigor Gaming
+    XPG (Xtreme Performance Gear, a gaming brand of ADATA)
+
+Non-refillable liquid cooling (AiO)
+
+List of non-refillable liquid cooling manufacturers:
+
+    Cooler Master "Seidon Series"
+    Corsair "H-Series"
+    Deepcool "CAPTAIN Series" "MAELSTROM Series"
+    EKWB
+    EVGA Corporation
+    Fractal Design "Kelvin Series"
+    Lian Li
+    NZXT "Kraken Series"
+    Razer Inc. "Hanbo Chroma Series"
+    Thermaltake "Water2.0 Series"
+    XPG "Lavente series" (Xtreme Performance Gear, a gaming brand of ADATA)
+    Zotac (stopped producing water coolers)
+
+Refillable liquid cooling kits
+
+List of refillable liquid cooling kits manufacturers:
+
+    Thermaltake
+
+Water block
+
+List of water block manufacturers:
+
+    Corsair
+    EKWB
+    EVGA Corporation
+    Thermaltake
+

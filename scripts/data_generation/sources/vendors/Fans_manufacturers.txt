@@ -1,0 +1,31 @@
+Fans
+
+    Aigo
+    Antec
+    Arctic GmbH
+    be quiet!
+    Corsair
+    Cooler Master
+    Deepcool
+    Delta Electronics
+    Ebm-papst
+    Inventec
+    Lian Li
+    Minebea (NMB)
+    Nidec
+    Noctua
+    Razer Inc. (also bundled with AIO watercoolers)
+    Thermaltake
+    XPG (Xtreme Performance Gear, a gaming brand of ADATA)
+
+Fan controllers
+
+    Asus (bundled with top of the range ROG motherboards)
+    Cooler Master
+    Corsair
+    GELID Solutions
+    Lian Li
+    NZXT
+    Razer Inc. (external or internal)
+    Thermaltake
+
