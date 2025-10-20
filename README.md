@@ -15,7 +15,7 @@ A high-performance, elegantly designed e-commerce platform specialized in PC har
 
 ## Technology Stack
 
-- **Database**: Microsoft SQL Server - Optimized schema with strategic indexing
+- **Database**: MS SQL Server & Oracle - Dual-support with optimized, database-specific schemas.
 - **Backend**: Python 3.10+, Django 4.2+, Django REST Framework
 - **Admin CMS**: Directus (connected directly to MS SQL)
 - **Frontend**: HTML/CSS/JavaScript with planned React/Next.js implementation
@@ -26,20 +26,14 @@ A high-performance, elegantly designed e-commerce platform specialized in PC har
 ```
 WinStore/
 ├── .github/                    # GitHub-specific files and documentation
-│   ├── copilot-instructions/   # Guidelines for GitHub Copilot
-│   └── copilot_memory_bank/    # Project context and documentation
-├── sql/                        # SQL scripts for database setup
-│   ├── deploy.sql              # Master deployment script
-│   ├── 01_schema/              # Database structure definitions
-│   ├── 02_audit/               # Audit system configuration
-│   ├── 03_views/               # Database views
-│   ├── 04_procedures/          # Stored procedures
-│   └── 05_triggers/            # Database triggers
-├── backend/                    # Django application
-│   ├── apps/                   # Django apps (accounts, orders, products, etc.)
-│   ├── config/                 # Django settings and configuration
-│   └── directus/               # Directus CMS extensions
+├── docs/
+│   └── aic_guide/              # Unified documentation entry point (Start Here)
+├── sql/                        # MS SQL Server database scripts
+├── oracle/                     # Oracle Database scripts
+├── backend/                    # Django application (the core logic)
 ├── frontend/                   # Frontend static files
+├── scripts/
+│   └── data_generation/        # Scripts for populating the database with test data
 ├── nginx/                      # Nginx configuration
 └── docker-compose.yml          # Docker Compose configuration
 ```
@@ -89,19 +83,21 @@ WinStore is built following the "Absurdly Ideal Code" philosophy:
    docker-compose up -d
    ```
 
-4. Access the applications:
+4. (Optional) Populate the database with data:
+   The project includes powerful scripts for generating realistic test data. For detailed instructions, see the documentation in `docs/data-generation.md`.
+
+5. Access the applications:
    - Backend API: http://localhost:8000/api/
    - Directus CMS: http://localhost:8055/
    - Frontend: http://localhost:80/
 
 ## Documentation
 
-Detailed documentation is available in the `.github/copilot_memory_bank/` directory:
+This project is documented following the "Absurdly Ideal Code" philosophy, emphasizing clarity and a top-down approach to understanding the architecture.
 
-- `database_documentation.md` - Database schema and design philosophy
-- `system_statuses.md` - Status management system documentation
-- `SQL_style_guide.md` - SQL coding standards
-- `productContext.md` - Product overview and business context
+**The primary entry point for all documentation is the [AIC Guide](./docs/aic_guide/index.md).**
+
+This guide provides a high-level overview of the project's philosophy, architecture, and processes, with links to more detailed documents. We strongly recommend starting there to gain a comprehensive understanding of the project.
 
 ## Development
 
