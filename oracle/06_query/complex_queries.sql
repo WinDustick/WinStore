@@ -120,8 +120,8 @@ CREATE GLOBAL TEMPORARY TABLE InventoryStaging (
     product_price NUMBER(10,2)
 ) ON COMMIT PRESERVE ROWS;
 
-INSERT INTO InventoryStaging (product_SKU, new_stock_level, product_price) VALUES ('NVIDIA-RTX-4090', 50, 1599.99);
-INSERT INTO InventoryStaging (product_SKU, new_stock_level, product_price) VALUES ('AMD-RYZEN9-7950X', 100, 549.00);
+INSERT INTO InventoryStaging (product_SKU, new_stock_level, product_price) VALUES ('NVIDIA-RTX-4090-query', 50, 1599.99);
+INSERT INTO InventoryStaging (product_SKU, new_stock_level, product_price) VALUES ('AMD-RYZEN9-7950X-query', 100, 549.00);
 INSERT INTO InventoryStaging (product_SKU, new_stock_level, product_price) VALUES ('NEW-COOL-GADGET-01', 200, 99.99);
 
 MERGE INTO Products p
@@ -181,14 +181,14 @@ USING (
     GROUP BY
         o.user_ID
     HAVING
-        SUM(o.order_AMOUNT) > 5000
+        SUM(o.order_AMOUNT) > 12000
 ) s ON (u.user_ID = s.user_ID)
 WHEN MATCHED THEN
     UPDATE SET
         u.user_ROLE = 'Admin' -- Assuming 'Admin' is the VIP role for this example
     WHERE
         u.user_ROLE = 'Customer'; -- Only update if they are currently a standard customer
-
+commit ;
 
 -- =====================================================================
 -- Query 5: Top 3 Selling Products per Category (Analytic Function)
@@ -235,7 +235,7 @@ SELECT
 FROM
     RankedSales
 WHERE
-    sales_rank <= 3
+    sales_rank <= 10
 ORDER BY
     category_NAME,
     sales_rank;
@@ -337,7 +337,7 @@ AND
     EXISTS (
         SELECT 1
         FROM Review r
-        WHERE r.user_ID = u.user_ID AND r.rew_RATING >= 4
+        WHERE r.user_ID = u.user_ID AND r.rew_RATING >= 5
     );
 
 
@@ -392,5 +392,21 @@ GROUP BY
 ORDER BY
     v.ven_NAME,
     c.category_NAME;
+
+
+SELECT
+    c.CATEGORY_ID,
+    c.CATEGORY_NAME,
+    COUNT(p.PRODUCT_ID) AS PRODUCT_COUNT,
+    NVL(SUM(p.PRODUCT_STOCK), 0) AS TOTAL_STOCK,
+    NVL(SUM(p.PRODUCT_PRICE * p.PRODUCT_STOCK), 0) AS TOTAL_VALUE
+FROM WINSTORE_ADMIN.CATEGORIES c
+LEFT JOIN WINSTORE_ADMIN.PRODUCTS p
+    ON c.CATEGORY_ID = p.CATEGORY_ID
+GROUP BY c.CATEGORY_ID, c.CATEGORY_NAME
+ORDER BY c.CATEGORY_ID;
+
+
+
 
 PROMPT ========== COMPLEX QUERY EXECUTION COMPLETE ==========

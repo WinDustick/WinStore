@@ -151,3 +151,9 @@ node_modules/
 
 # Backup files
 /backup
+/rgr 2
+/rgr 3
+/docs/offtop
+
+instantclient-basic-linux.x64-21.19.0.0.0dbru
+backend/inspected_models.py

@@ -99,6 +99,7 @@ CREATE OR REPLACE PROCEDURE sp_LogBusinessAuditEvent(
     p_AuditID OUT NUMBER
 )
 AS
+    PRAGMA AUTONOMOUS_TRANSACTION;
     v_AppName NVARCHAR2(128);
     v_HostName NVARCHAR2(128);
     v_IPAddress NVARCHAR2(50);

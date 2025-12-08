@@ -6,7 +6,7 @@ djangorestframework==3.14.0
 
 # Database
 pyodbc
-django-mssql-backend==2.8.1
+#django-mssql-backend==2.8.1
 oracledb
 
 # Image processing
@@ -17,6 +17,7 @@ python-dotenv==1.0.0
 
 # API Documentation
 drf-yasg==1.21.7
+setuptools==69.5.1
 
 # Web Scraping / Data Generation
 requests==2.31.0

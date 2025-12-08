@@ -1,19 +1,27 @@
-# Документация базы данных WinStore (Oracle)
+# WinStore: Oracle Database Documentation
 
 Версия: 2025-10-01
 
-## Обзор
+## Цель и философия
 
-Этот документ описывает точную модель данных Oracle, создаваемую скриптами в каталоге `oracle/`. Он обновляет и заменяет MS SQL-ориентированный документ `docs/database_documentation.md` для Oracle-ветви.
+Этот документ — единственный источник истины по Oracle-схеме WinStore. Он самодостаточен и лаконичен, следует принципам AIC (Absurdly Ideal Code):
+- Максимальная простота (KISS)
+- Экстремальная надёжность (чёткие ограничения, предсказуемые ошибки)
+- Пиковая производительность (правильные типы, индексы, минимальные триггеры)
 
-## Основные отличия Oracle от MS SQL в проекте
+## Область
 
-- Типы данных: NVARCHAR2/NCHAR, TIMESTAMP, NCLOB.
-- Авто-ID: последовательности `SEQ_*` + триггеры `TRG_*_BI` (BEFORE INSERT).
-- Тексты больших полей (NCLOB) не используются в GROUP BY; при необходимости — `DBMS_LOB.SUBSTR`.
-- Материализованные представления вместо индексированных.
+Описывает только Oracle-реализацию: типы данных, таблицы, ключи, индексы, представления/MV, последовательности/триггеры, статусы и развёртывание. Никаких ссылок на другие СУБД.
 
-## Схема данных (таблицы и ключевые поля)
+## Ключевые свойства Oracle-схемы
+
+- Типы: NVARCHAR2/NCHAR, NUMBER, TIMESTAMP, NCLOB
+- Авто-ID: SEQUENCE `SEQ_*` + триггеры `TRG_*_BI` (BEFORE INSERT)
+- EAV-хранилище характеристик: `ProductAttributes`
+- Большие тексты (NCLOB): для выборок по части — `DBMS_LOB.SUBSTR`
+- Материализованные представления для сводных данных
+
+## Схема данных (сводка)
 
 - Users
   - PK: user_ID (NUMBER, авто через TRG_USERS_BI/SEQ_USERS_ID)
@@ -120,7 +128,7 @@
 
 ## Индексы (ключевые)
 
-- См. `01_schema/04_indexes.sql`. Ключевые примеры:
+- См. `01_schema/04_indexes.sql`. Ключевые примеры (не исчерпывающий список):
   - Products: IX_Products_CategoryID, IX_Products_VendorID, IX_Products_Featured_Active,
     IX_Products_Name_Category_Price, IX_Products_Name_Upper
   - Orders/OrderItems: IX_Orders_UserID, IX_Orders_OrderStatusID, IX_OrderItems_OrderID
@@ -142,10 +150,14 @@
   Unified Auditing (идемпотентно) или традиционный AUDIT для старых версий.
 - Пользователи и роли: `01_schema/05_users.sql` — роли, пользователи, явные GRANT'ы и EXECUTE на пакеты.
 
-## Развертывание
+## Развёртывание, сброс и восстановление
 
-- Мастер-скрипт: `oracle/deploy.sql` с SPOOL логом в `oracle/logs/oracle_deploy_YYYYMMDD_HH24MISSlog.lst`.
-- Порядок: 01_schema → 02_audit → 03_views → 04_procedures → 04_indexes.
+- Развёртывание: запустите `oracle/deploy.sql`. Лог пишется в `oracle/logs/oracle_deploy_YYYYMMDD_HH24MISSlog.lst`.
+- Порядок внутри мастера: 01_schema → 02_audit → 03_views → 04_procedures → 04_indexes.
+- Сброс: используйте `oracle/reset.sql` (убивает сессии, удаляет пользователей/объекты WinStore).
+- Бутстрап восстановления: `oracle/recovery.sql` (создаёт пользователей/роли/директории, минимально необходимое).
+- Импорт из дампа: Data Pump (impdp) с созданной DIRECTORY (см. recovery.sql).
+- Проверка: выборки по `Products`, `ProductAttributes`, справочникам статусов, наличие представлений и MV.
 
 ## Табличное пространство
 
@@ -155,6 +167,13 @@
 
 - Лимит длины имен объектов: 30 символов.
 - Unified Auditing может различаться по версиям — скрипт обрабатывает существующие политики.
+
+## Рекомендации по применению EAV
+
+- Старайтесь хранить инвариантные свойства как обычные столбцы в `Products`.
+- В `ProductAttributes` переносите только вариативные характеристики.
+- Для отчётов используйте представления, транспонируя EAV через `MAX(DECODE(...))`.
+- Избегайте дублирования пар (product_ID, att_ID) — PK это предотвращает.
 
 ## Ссылки
 

@@ -6,13 +6,14 @@ ENV PYTHONUNBUFFERED=1
 ENV PYTHONPATH=/app
 
 # Install system dependencies
-# Установка базовых зависимостей, необходимых для добавления репозиториев и сборки pyodbc
+# Установка базовых зависимостей, включая libaio1 для Oracle
 RUN apt-get update && apt-get install -y --no-install-recommends \
     apt-transport-https \
     build-essential \
     curl \
     gnupg \
     unixodbc-dev \
+    libaio1t64 \
  && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Добавление GPG ключа Microsoft и репозитория
@@ -25,6 +26,15 @@ RUN apt-get update \
  && ACCEPT_EULA=Y apt-get install -y --no-install-recommends msodbcsql17 \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/*
+
+# --- Установка Oracle Instant Client из локальной копии ---
+# Создание директории для клиента и копирование файлов
+RUN mkdir -p /opt/oracle/instantclient
+COPY instantclient-basic-linux.x64-21.19.0.0.0dbru/instantclient_21_19 /opt/oracle/instantclient
+
+# Добавление пути к библиотекам в конфигурацию динамического компоновщика
+RUN echo /opt/oracle/instantclient > /etc/ld.so.conf.d/oracle-instantclient.conf && ldconfig
+# --- Конец установки Oracle ---
 
 # Set work directory
 WORKDIR /app
