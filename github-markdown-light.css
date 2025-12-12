@@ -1,0 +1,1136 @@
+/* light */
+.vscode-body {
+  color-scheme: light;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  margin: 0;
+  color: #1f2328;
+  background-color: #ffffff;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
+  font-size: 16px;
+  line-height: 1.5;
+  word-wrap: break-word;
+}
+
+.vscode-body .octicon {
+  display: inline-block;
+  fill: currentColor;
+  vertical-align: text-bottom;
+}
+
+.vscode-body h1:hover .anchor .octicon-link:before,
+.vscode-body h2:hover .anchor .octicon-link:before,
+.vscode-body h3:hover .anchor .octicon-link:before,
+.vscode-body h4:hover .anchor .octicon-link:before,
+.vscode-body h5:hover .anchor .octicon-link:before,
+.vscode-body h6:hover .anchor .octicon-link:before {
+  width: 16px;
+  height: 16px;
+  content: ' ';
+  display: inline-block;
+  background-color: currentColor;
+  -webkit-mask-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' version='1.1' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg>");
+  mask-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' version='1.1' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg>");
+}
+
+.vscode-body details,
+.vscode-body figcaption,
+.vscode-body figure {
+  display: block;
+}
+
+.vscode-body summary {
+  display: list-item;
+}
+
+.vscode-body [hidden] {
+  display: none !important;
+}
+
+.vscode-body a {
+  background-color: transparent;
+  color: #0969da;
+  text-decoration: none;
+}
+
+.vscode-body abbr[title] {
+  border-bottom: none;
+  -webkit-text-decoration: underline dotted;
+  text-decoration: underline dotted;
+}
+
+.vscode-body b,
+.vscode-body strong {
+  font-weight: 600;
+}
+
+.vscode-body dfn {
+  font-style: italic;
+}
+
+.vscode-body h1 {
+  margin: .67em 0;
+  font-weight: 600;
+  padding-bottom: .3em;
+  font-size: 2em;
+  border-bottom: 1px solid #d1d9e0b3;
+}
+
+.vscode-body mark {
+  background-color: #fff8c5;
+  color: #1f2328;
+}
+
+.vscode-body small {
+  font-size: 90%;
+}
+
+.vscode-body sub,
+.vscode-body sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+.vscode-body sub {
+  bottom: -0.25em;
+}
+
+.vscode-body sup {
+  top: -0.5em;
+}
+
+.vscode-body img {
+  border-style: none;
+  max-width: 100%;
+  box-sizing: content-box;
+}
+
+.vscode-body code,
+.vscode-body kbd,
+.vscode-body pre,
+.vscode-body samp {
+  font-family: monospace;
+  font-size: 1em;
+}
+
+.vscode-body figure {
+  margin: 1em 2.5rem;
+}
+
+.vscode-body hr {
+  box-sizing: content-box;
+  overflow: hidden;
+  background: transparent;
+  border-bottom: 1px solid #d1d9e0b3;
+  height: .25em;
+  padding: 0;
+  margin: 1.5rem 0;
+  background-color: #d1d9e0;
+  border: 0;
+}
+
+.vscode-body input {
+  font: inherit;
+  margin: 0;
+  overflow: visible;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+.vscode-body [type=button],
+.vscode-body [type=reset],
+.vscode-body [type=submit] {
+  -webkit-appearance: button;
+  appearance: button;
+}
+
+.vscode-body [type=checkbox],
+.vscode-body [type=radio] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.vscode-body [type=number]::-webkit-inner-spin-button,
+.vscode-body [type=number]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+.vscode-body [type=search]::-webkit-search-cancel-button,
+.vscode-body [type=search]::-webkit-search-decoration {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.vscode-body ::-webkit-input-placeholder {
+  color: inherit;
+  opacity: .54;
+}
+
+.vscode-body ::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  appearance: button;
+  font: inherit;
+}
+
+.vscode-body a:hover {
+  text-decoration: underline;
+}
+
+.vscode-body ::placeholder {
+  color: #59636e;
+  opacity: 1;
+}
+
+.vscode-body hr::before {
+  display: table;
+  content: "";
+}
+
+.vscode-body hr::after {
+  display: table;
+  clear: both;
+  content: "";
+}
+
+.vscode-body table {
+  border-spacing: 0;
+  border-collapse: collapse;
+  display: block;
+  width: max-content;
+  max-width: 100%;
+  overflow: auto;
+  font-variant: tabular-nums;
+}
+
+.vscode-body td,
+.vscode-body th {
+  padding: 0;
+}
+
+.vscode-body details summary {
+  cursor: pointer;
+}
+
+.vscode-body a:focus,
+.vscode-body [role=button]:focus,
+.vscode-body input[type=radio]:focus,
+.vscode-body input[type=checkbox]:focus {
+  outline: 2px solid #0969da;
+  outline-offset: -2px;
+  box-shadow: none;
+}
+
+.vscode-body a:focus:not(:focus-visible),
+.vscode-body [role=button]:focus:not(:focus-visible),
+.vscode-body input[type=radio]:focus:not(:focus-visible),
+.vscode-body input[type=checkbox]:focus:not(:focus-visible) {
+  outline: solid 1px transparent;
+}
+
+.vscode-body a:focus-visible,
+.vscode-body [role=button]:focus-visible,
+.vscode-body input[type=radio]:focus-visible,
+.vscode-body input[type=checkbox]:focus-visible {
+  outline: 2px solid #0969da;
+  outline-offset: -2px;
+  box-shadow: none;
+}
+
+.vscode-body a:not([class]):focus,
+.vscode-body a:not([class]):focus-visible,
+.vscode-body input[type=radio]:focus,
+.vscode-body input[type=radio]:focus-visible,
+.vscode-body input[type=checkbox]:focus,
+.vscode-body input[type=checkbox]:focus-visible {
+  outline-offset: 0;
+}
+
+.vscode-body kbd {
+  display: inline-block;
+  padding: 0.25rem;
+  font: 11px ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;
+  line-height: 10px;
+  color: #1f2328;
+  vertical-align: middle;
+  background-color: #f6f8fa;
+  border: solid 1px #d1d9e0b3;
+  border-bottom-color: #d1d9e0b3;
+  border-radius: 6px;
+  box-shadow: inset 0 -1px 0 #d1d9e0b3;
+}
+
+.vscode-body h1,
+.vscode-body h2,
+.vscode-body h3,
+.vscode-body h4,
+.vscode-body h5,
+.vscode-body h6 {
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.vscode-body h2 {
+  font-weight: 600;
+  padding-bottom: .3em;
+  font-size: 1.5em;
+  border-bottom: 1px solid #d1d9e0b3;
+}
+
+.vscode-body h3 {
+  font-weight: 600;
+  font-size: 1.25em;
+}
+
+.vscode-body h4 {
+  font-weight: 600;
+  font-size: 1em;
+}
+
+.vscode-body h5 {
+  font-weight: 600;
+  font-size: .875em;
+}
+
+.vscode-body h6 {
+  font-weight: 600;
+  font-size: .85em;
+  color: #59636e;
+}
+
+.vscode-body p {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.vscode-body blockquote {
+  margin: 0;
+  padding: 0 1em;
+  color: #59636e;
+  border-left: .25em solid #d1d9e0;
+}
+
+.vscode-body ul,
+.vscode-body ol {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 2em;
+}
+
+.vscode-body ol ol,
+.vscode-body ul ol {
+  list-style-type: lower-roman;
+}
+
+.vscode-body ul ul ol,
+.vscode-body ul ol ol,
+.vscode-body ol ul ol,
+.vscode-body ol ol ol {
+  list-style-type: lower-alpha;
+}
+
+.vscode-body dd {
+  margin-left: 0;
+}
+
+.vscode-body tt,
+.vscode-body code,
+.vscode-body samp {
+  font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;
+  font-size: 12px;
+}
+
+.vscode-body pre {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;
+  font-size: 12px;
+  word-wrap: normal;
+}
+
+.vscode-body .octicon {
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.vscode-body input::-webkit-outer-spin-button,
+.vscode-body input::-webkit-inner-spin-button {
+  margin: 0;
+  appearance: none;
+}
+
+.vscode-body .mr-2 {
+  margin-right: 0.5rem !important;
+}
+
+.vscode-body::before {
+  display: table;
+  content: "";
+}
+
+.vscode-body::after {
+  display: table;
+  clear: both;
+  content: "";
+}
+
+.vscode-body>*:first-child {
+  margin-top: 0 !important;
+}
+
+.vscode-body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+.vscode-body a:not([href]) {
+  color: inherit;
+  text-decoration: none;
+}
+
+.vscode-body .absent {
+  color: #d1242f;
+}
+
+.vscode-body .anchor {
+  float: left;
+  padding-right: 0.25rem;
+  margin-left: -20px;
+  line-height: 1;
+}
+
+.vscode-body .anchor:focus {
+  outline: none;
+}
+
+.vscode-body p,
+.vscode-body blockquote,
+.vscode-body ul,
+.vscode-body ol,
+.vscode-body dl,
+.vscode-body table,
+.vscode-body pre,
+.vscode-body details {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.vscode-body blockquote>:first-child {
+  margin-top: 0;
+}
+
+.vscode-body blockquote>:last-child {
+  margin-bottom: 0;
+}
+
+.vscode-body h1 .octicon-link,
+.vscode-body h2 .octicon-link,
+.vscode-body h3 .octicon-link,
+.vscode-body h4 .octicon-link,
+.vscode-body h5 .octicon-link,
+.vscode-body h6 .octicon-link {
+  color: #1f2328;
+  vertical-align: middle;
+  visibility: hidden;
+}
+
+.vscode-body h1:hover .anchor,
+.vscode-body h2:hover .anchor,
+.vscode-body h3:hover .anchor,
+.vscode-body h4:hover .anchor,
+.vscode-body h5:hover .anchor,
+.vscode-body h6:hover .anchor {
+  text-decoration: none;
+}
+
+.vscode-body h1:hover .anchor .octicon-link,
+.vscode-body h2:hover .anchor .octicon-link,
+.vscode-body h3:hover .anchor .octicon-link,
+.vscode-body h4:hover .anchor .octicon-link,
+.vscode-body h5:hover .anchor .octicon-link,
+.vscode-body h6:hover .anchor .octicon-link {
+  visibility: visible;
+}
+
+.vscode-body h1 tt,
+.vscode-body h1 code,
+.vscode-body h2 tt,
+.vscode-body h2 code,
+.vscode-body h3 tt,
+.vscode-body h3 code,
+.vscode-body h4 tt,
+.vscode-body h4 code,
+.vscode-body h5 tt,
+.vscode-body h5 code,
+.vscode-body h6 tt,
+.vscode-body h6 code {
+  padding: 0 .2em;
+  font-size: inherit;
+}
+
+.vscode-body summary h1,
+.vscode-body summary h2,
+.vscode-body summary h3,
+.vscode-body summary h4,
+.vscode-body summary h5,
+.vscode-body summary h6 {
+  display: inline-block;
+}
+
+.vscode-body summary h1 .anchor,
+.vscode-body summary h2 .anchor,
+.vscode-body summary h3 .anchor,
+.vscode-body summary h4 .anchor,
+.vscode-body summary h5 .anchor,
+.vscode-body summary h6 .anchor {
+  margin-left: -40px;
+}
+
+.vscode-body summary h1,
+.vscode-body summary h2 {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.vscode-body ul.no-list,
+.vscode-body ol.no-list {
+  padding: 0;
+  list-style-type: none;
+}
+
+.vscode-body ol[type="a s"] {
+  list-style-type: lower-alpha;
+}
+
+.vscode-body ol[type="A s"] {
+  list-style-type: upper-alpha;
+}
+
+.vscode-body ol[type="i s"] {
+  list-style-type: lower-roman;
+}
+
+.vscode-body ol[type="I s"] {
+  list-style-type: upper-roman;
+}
+
+.vscode-body ol[type="1"] {
+  list-style-type: decimal;
+}
+
+.vscode-body div>ol:not([type]) {
+  list-style-type: decimal;
+}
+
+.vscode-body ul ul,
+.vscode-body ul ol,
+.vscode-body ol ol,
+.vscode-body ol ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.vscode-body li>p {
+  margin-top: 1rem;
+}
+
+.vscode-body li+li {
+  margin-top: .25em;
+}
+
+.vscode-body dl {
+  padding: 0;
+}
+
+.vscode-body dl dt {
+  padding: 0;
+  margin-top: 1rem;
+  font-size: 1em;
+  font-style: italic;
+  font-weight: 600;
+}
+
+.vscode-body dl dd {
+  padding: 0 1rem;
+  margin-bottom: 1rem;
+}
+
+.vscode-body table {
+  font-size: 12px;
+}
+
+.vscode-body table th {
+  font-weight: 600;
+}
+
+.vscode-body table th,
+.vscode-body table td {
+  padding: 6px 13px;
+  border: 1px solid #333333;
+}
+
+.vscode-body table td>:last-child {
+  margin-bottom: 0;
+}
+
+.vscode-body table tr {
+  background-color: #ffffff;
+  border-top: 1px solid #333333;
+}
+
+.vscode-body table tr:nth-child(2n) {
+  background-color: #f6f8fa;
+}
+
+.vscode-body table img {
+  background-color: transparent;
+}
+
+.vscode-body table th {
+  font-weight: 600;
+}
+
+.vscode-body table th,
+.vscode-body table td {
+  padding: 6px 13px;
+  border: 1px solid #333333;
+}
+
+.vscode-body table td>:last-child {
+  margin-bottom: 0;
+}
+
+.vscode-body table tr {
+  background-color: #ffffff;
+  border-top: 1px solid #333333;
+}
+
+.vscode-body table tr:nth-child(2n) {
+  background-color: #f6f8fa;
+}
+
+.vscode-body table img {
+  background-color: transparent;
+}
+
+.vscode-body img[align=right] {
+  padding-left: 20px;
+}
+
+.vscode-body img[align=left] {
+  padding-right: 20px;
+}
+
+.vscode-body .emoji {
+  max-width: none;
+  vertical-align: text-top;
+  background-color: transparent;
+}
+
+.vscode-body span.frame {
+  display: block;
+  overflow: hidden;
+}
+
+.vscode-body span.frame>span {
+  display: block;
+  float: left;
+  width: auto;
+  padding: 7px;
+  margin: 13px 0 0;
+  overflow: hidden;
+  border: 1px solid #d1d9e0;
+}
+
+.vscode-body span.frame span img {
+  display: block;
+  float: left;
+}
+
+.vscode-body span.frame span span {
+  display: block;
+  padding: 5px 0 0;
+  clear: both;
+  color: #1f2328;
+}
+
+.vscode-body span.align-center {
+  display: block;
+  overflow: hidden;
+  clear: both;
+}
+
+.vscode-body span.align-center>span {
+  display: block;
+  margin: 13px auto 0;
+  overflow: hidden;
+  text-align: center;
+}
+
+.vscode-body span.align-center span img {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.vscode-body span.align-right {
+  display: block;
+  overflow: hidden;
+  clear: both;
+}
+
+.vscode-body span.align-right>span {
+  display: block;
+  margin: 13px 0 0;
+  overflow: hidden;
+  text-align: right;
+}
+
+.vscode-body span.align-right span img {
+  margin: 0;
+  text-align: right;
+}
+
+.vscode-body span.float-left {
+  display: block;
+  float: left;
+  margin-right: 13px;
+  overflow: hidden;
+}
+
+.vscode-body span.float-left span {
+  margin: 13px 0 0;
+}
+
+.vscode-body span.float-right {
+  display: block;
+  float: right;
+  margin-left: 13px;
+  overflow: hidden;
+}
+
+.vscode-body span.float-right>span {
+  display: block;
+  margin: 13px auto 0;
+  overflow: hidden;
+  text-align: right;
+}
+
+.vscode-body code,
+.vscode-body tt {
+  padding: .2em .4em;
+  margin: 0;
+  font-size: 85%;
+  white-space: break-spaces;
+  background-color: #818b981f;
+  border-radius: 6px;
+}
+
+.vscode-body code br,
+.vscode-body tt br {
+  display: none;
+}
+
+.vscode-body del code {
+  text-decoration: inherit;
+}
+
+.vscode-body samp {
+  font-size: 85%;
+}
+
+.vscode-body pre code {
+  font-size: 100%;
+}
+
+.vscode-body pre>code {
+  padding: 0;
+  margin: 0;
+  word-break: normal;
+  white-space: pre;
+  background: transparent;
+  border: 0;
+}
+
+.vscode-body .highlight {
+  margin-bottom: 1rem;
+}
+
+.vscode-body .highlight pre {
+  margin-bottom: 0;
+  word-break: normal;
+}
+
+.vscode-body .highlight pre,
+.vscode-body pre {
+  padding: 1rem;
+  overflow: auto;
+  font-size: 85%;
+  line-height: 1.45;
+  color: #1f2328;
+  background-color: #f6f8fa;
+  border-radius: 6px;
+}
+
+.vscode-body pre code,
+.vscode-body pre tt {
+  color: black;
+  display: inline;
+  max-width: auto;
+  padding: 0;
+  margin: 0;
+  overflow: visible;
+  line-height: inherit;
+  word-wrap: normal;
+  background-color: transparent;
+  border: 0;
+}
+
+.vscode-body .csv-data td,
+.vscode-body .csv-data th {
+  padding: 5px;
+  overflow: hidden;
+  font-size: 12px;
+  line-height: 1;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.vscode-body .csv-data .blob-num {
+  padding: 10px 0.5rem 9px;
+  text-align: right;
+  background: #ffffff;
+  border: 0;
+}
+
+.vscode-body .csv-data tr {
+  border-top: 0;
+}
+
+.vscode-body .csv-data th {
+  font-weight: 600;
+  background: #f6f8fa;
+  border-top: 0;
+}
+
+.vscode-body [data-footnote-ref]::before {
+  content: "[";
+}
+
+.vscode-body [data-footnote-ref]::after {
+  content: "]";
+}
+
+.vscode-body .footnotes {
+  font-size: 12px;
+  color: #59636e;
+  border-top: 1px solid #d1d9e0;
+}
+
+.vscode-body .footnotes ol {
+  padding-left: 1rem;
+}
+
+.vscode-body .footnotes ol ul {
+  display: inline-block;
+  padding-left: 1rem;
+  margin-top: 1rem;
+}
+
+.vscode-body .footnotes li {
+  position: relative;
+}
+
+.vscode-body .footnotes li:target::before {
+  position: absolute;
+  top: calc(0.5rem*-1);
+  right: calc(0.5rem*-1);
+  bottom: calc(0.5rem*-1);
+  left: calc(1.5rem*-1);
+  pointer-events: none;
+  content: "";
+  border: 2px solid #0969da;
+  border-radius: 6px;
+}
+
+.vscode-body .footnotes li:target {
+  color: #1f2328;
+}
+
+.vscode-body .footnotes .data-footnote-backref g-emoji {
+  font-family: monospace;
+}
+
+.vscode-body .vscode-body:has(:modal) {
+  padding-right: var(--dialog-scrollgutter) !important;
+}
+
+.vscode-body .pl-c {
+  color: #59636e;
+}
+
+.vscode-body .pl-c1,
+.vscode-body .pl-s .pl-v {
+  color: #0550ae;
+}
+
+.vscode-body .pl-e,
+.vscode-body .pl-en {
+  color: #6639ba;
+}
+
+.vscode-body .pl-smi,
+.vscode-body .pl-s .pl-s1 {
+  color: #1f2328;
+}
+
+.vscode-body .pl-ent {
+  color: #0550ae;
+}
+
+.vscode-body .pl-k {
+  color: #cf222e;
+}
+
+.vscode-body .pl-s,
+.vscode-body .pl-pds,
+.vscode-body .pl-s .pl-pse .pl-s1,
+.vscode-body .pl-sr,
+.vscode-body .pl-sr .pl-cce,
+.vscode-body .pl-sr .pl-sre,
+.vscode-body .pl-sr .pl-sra {
+  color: #0a3069;
+}
+
+.vscode-body .pl-v,
+.vscode-body .pl-smw {
+  color: #953800;
+}
+
+.vscode-body .pl-bu {
+  color: #82071e;
+}
+
+.vscode-body .pl-ii {
+  color: #f6f8fa;
+  background-color: #82071e;
+}
+
+.vscode-body .pl-c2 {
+  color: #f6f8fa;
+  background-color: #cf222e;
+}
+
+.vscode-body .pl-sr .pl-cce {
+  font-weight: bold;
+  color: #116329;
+}
+
+.vscode-body .pl-ml {
+  color: #3b2300;
+}
+
+.vscode-body .pl-mh,
+.vscode-body .pl-mh .pl-en,
+.vscode-body .pl-ms {
+  font-weight: bold;
+  color: #0550ae;
+}
+
+.vscode-body .pl-mi {
+  font-style: italic;
+  color: #1f2328;
+}
+
+.vscode-body .pl-mb {
+  font-weight: bold;
+  color: #1f2328;
+}
+
+.vscode-body .pl-md {
+  color: #82071e;
+  background-color: #ffebe9;
+}
+
+.vscode-body .pl-mi1 {
+  color: #116329;
+  background-color: #dafbe1;
+}
+
+.vscode-body .pl-mc {
+  color: #953800;
+  background-color: #ffd8b5;
+}
+
+.vscode-body .pl-mi2 {
+  color: #d1d9e0;
+  background-color: #0550ae;
+}
+
+.vscode-body .pl-mdr {
+  font-weight: bold;
+  color: #8250df;
+}
+
+.vscode-body .pl-ba {
+  color: #59636e;
+}
+
+.vscode-body .pl-sg {
+  color: #818b98;
+}
+
+.vscode-body .pl-corl {
+  text-decoration: underline;
+  color: #0a3069;
+}
+
+.vscode-body [role=button]:focus:not(:focus-visible),
+.vscode-body [role=tabpanel][tabindex="0"]:focus:not(:focus-visible),
+.vscode-body button:focus:not(:focus-visible),
+.vscode-body summary:focus:not(:focus-visible),
+.vscode-body a:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.vscode-body [tabindex="0"]:focus:not(:focus-visible),
+.vscode-body details-dialog:focus:not(:focus-visible) {
+  outline: none;
+}
+
+.vscode-body g-emoji {
+  display: inline-block;
+  min-width: 1ch;
+  font-family: "Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  font-size: 1em;
+  font-style: normal !important;
+  font-weight: 400;
+  line-height: 1;
+  vertical-align: -0.075em;
+}
+
+.vscode-body g-emoji img {
+  width: 1em;
+  height: 1em;
+}
+
+.vscode-body .task-list-item {
+  list-style-type: none;
+}
+
+.vscode-body .task-list-item label {
+  font-weight: 400;
+}
+
+.vscode-body .task-list-item.enabled label {
+  cursor: pointer;
+}
+
+.vscode-body .task-list-item+.task-list-item {
+  margin-top: 0.25rem;
+}
+
+.vscode-body .task-list-item .handle {
+  display: none;
+}
+
+.vscode-body .task-list-item-checkbox {
+  margin: 0 .2em .25em -1.4em;
+  vertical-align: middle;
+}
+
+.vscode-body ul:dir(rtl) .task-list-item-checkbox {
+  margin: 0 -1.6em .25em .2em;
+}
+
+.vscode-body ol:dir(rtl) .task-list-item-checkbox {
+  margin: 0 -1.6em .25em .2em;
+}
+
+.vscode-body .contains-task-list:hover .task-list-item-convert-container,
+.vscode-body .contains-task-list:focus-within .task-list-item-convert-container {
+  display: block;
+  width: auto;
+  height: 24px;
+  overflow: visible;
+  clip: auto;
+}
+
+.vscode-body ::-webkit-calendar-picker-indicator {
+  filter: invert(50%);
+}
+
+.vscode-body .markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 1rem;
+  color: inherit;
+  border-left: .25em solid #d1d9e0;
+}
+
+.vscode-body .markdown-alert>:first-child {
+  margin-top: 0;
+}
+
+.vscode-body .markdown-alert>:last-child {
+  margin-bottom: 0;
+}
+
+.vscode-body .markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1;
+}
+
+.vscode-body .markdown-alert.markdown-alert-note {
+  border-left-color: #0969da;
+}
+
+.vscode-body .markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: #0969da;
+}
+
+.vscode-body .markdown-alert.markdown-alert-important {
+  border-left-color: #8250df;
+}
+
+.vscode-body .markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: #8250df;
+}
+
+.vscode-body .markdown-alert.markdown-alert-warning {
+  border-left-color: #9a6700;
+}
+
+.vscode-body .markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: #9a6700;
+}
+
+.vscode-body .markdown-alert.markdown-alert-tip {
+  border-left-color: #1a7f37;
+}
+
+.vscode-body .markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: #1a7f37;
+}
+
+.vscode-body .markdown-alert.markdown-alert-caution {
+  border-left-color: #cf222e;
+}
+
+.vscode-body .markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: #d1242f;
+}
+
+.vscode-body>*:first-child>.heading-element:first-child {
+  margin-top: 0 !important;
+}
+
+.vscode-body .highlight pre:has(+.zeroclipboard-container) {
+  min-height: 52px;
+}

@@ -1,0 +1,219 @@
+@startuml WinStore_ERD
+left to right direction
+
+skinparam linetype ortho
+skinparam nodesep 15
+skinparam ranksep 40
+
+skinparam rectangle {
+  Padding 2
+  RoundCorner 5
+}
+
+skinparam classAttributeIconSize 0
+skinparam defaultFontSize 12
+
+!theme vibrant
+title WinStore - Entity Relationship Diagram
+
+' =====================================================================
+' Table Definitions
+' =====================================================================
+
+entity "Users" {
+  * user_ID : NUMBER <<PK>>
+  --
+  user_NAME : NVARCHAR2(50) {NN}
+  user_PASS : NVARCHAR2(255) {NN}
+  user_EMAIL : NVARCHAR2(100) {U}
+  user_PHONE : NVARCHAR2(20) {NN}
+  user_ROLE : NVARCHAR2(50) {NN}
+  created_AT : TIMESTAMP
+  last_login : TIMESTAMP
+}
+
+entity "Categories" {
+  * category_ID : NUMBER <<PK>>
+  --
+  category_NAME : NVARCHAR2(100) {NN, U}
+  category_DESCRIPT : NVARCHAR2(500)
+}
+
+entity "Vendors" {
+  * ven_ID : NUMBER <<PK>>
+  --
+  ven_NAME : NVARCHAR2(100) {NN}
+  ven_COUNTRY : NVARCHAR2(100) {NN}
+  ven_DESCRIPT : NVARCHAR2(500)
+}
+
+entity "Attributes" {
+  * att_ID : NUMBER <<PK>>
+  --
+  att_NAME : NVARCHAR2(255) {NN, U}
+}
+
+entity "Products" {
+  * product_ID : NUMBER <<PK>>
+  --
+  # category_ID : NUMBER <<FK>> {NN}
+  # ven_ID : NUMBER <<FK>> {NN}
+  product_NAME : NVARCHAR2(255) {NN}
+  product_DESCRIPT : NCLOB {NN}
+  product_PRICE : NUMBER(10,2) {NN}
+  product_STOCK : NUMBER {NN}
+  is_featured : NUMBER(1) {NN}
+  is_active : NUMBER(1) {NN}
+  created_AT : TIMESTAMP
+  updated_AT : TIMESTAMP
+}
+
+entity "ProductMedia" {
+  * media_ID : NUMBER <<PK>>
+  --
+  # product_ID : NUMBER <<FK>> {NN}
+  media_URL : NVARCHAR2(1000) {NN}
+  media_TYPE : NVARCHAR2(50) {NN}
+  is_primary : NUMBER(1) {NN}
+  display_order : NUMBER {NN}
+  alt_text : NVARCHAR2(255)
+  created_AT : TIMESTAMP
+}
+
+entity "ProductAttributes" {
+  * att_ID : NUMBER <<PK>> <<FK>>
+  * product_ID : NUMBER <<PK>> <<FK>>
+  --
+  nominal : NCLOB {NN}
+  unit_of_measurement : NVARCHAR2(100)
+}
+
+entity "Wishlist" {
+  * wishlist_ID : NUMBER <<PK>>
+  --
+  # user_ID : NUMBER <<FK>> {NN}
+  # product_ID : NUMBER <<FK>> {NN}
+  added_AT : TIMESTAMP
+  notes : NVARCHAR2(500)
+}
+
+entity "Promotions" {
+  * promo_ID : NUMBER <<PK>>
+  --
+  # created_BY : NUMBER <<FK>>
+  promo_CODE : NVARCHAR2(50) {NN, U}
+  promo_NAME : NVARCHAR2(100) {NN}
+  promo_DESCRIPT : NVARCHAR2(500)
+  discount_TYPE : NVARCHAR2(10) {NN}
+  discount_VALUE : NUMBER(10,2) {NN}
+  min_purchase : NUMBER(10,2) {NN}
+  valid_FROM : TIMESTAMP {NN}
+  valid_TO : TIMESTAMP {NN}
+  max_USES : NUMBER
+  current_USES : NUMBER {NN}
+  is_ACTIVE : NUMBER(1) {NN}
+  created_AT : TIMESTAMP
+}
+
+entity "PromotionApplications" {
+  * app_ID : NUMBER <<PK>>
+  --
+  # promo_ID : NUMBER <<FK>> {NN}
+  target_TYPE : NVARCHAR2(10) {NN}
+  target_ID : NUMBER
+}
+
+entity "Orders" {
+  * order_ID : NUMBER <<PK>>
+  --
+  # user_ID : NUMBER <<FK>> {NN}
+  # promo_ID : NUMBER <<FK>>
+  order_DATE : TIMESTAMP
+  order_STATUS_ID : NUMBER
+  order_AMOUNT : NUMBER(10,2) {NN}
+  promo_SAVINGS : NUMBER(10,2) {NN}
+  delivery_ADDRESS : NVARCHAR2(500)
+  shipped_DATE : TIMESTAMP
+  estimated_delivery_DATE : TIMESTAMP
+  actual_delivery_DATE : TIMESTAMP
+  delivery_STATUS_ID : NUMBER
+  shipping_carrier_NAME : NVARCHAR2(255)
+  tracking_NUMBER : NVARCHAR2(100)
+}
+
+entity "OrderItems" {
+  * OrderItems_ID : NUMBER <<PK>>
+  --
+  # order_ID : NUMBER <<FK>> {NN}
+  # product_ID : NUMBER <<FK>> {NN}
+  quantity : NUMBER {NN}
+  price : NUMBER(10,2) {NN}
+}
+
+entity "Payments" {
+  * payment_ID : NUMBER <<PK>>
+  --
+  # order_ID : NUMBER <<FK>> {NN}
+  payment_DATE : TIMESTAMP {NN}
+  payment_METHOD : NVARCHAR2(50) {NN}
+  payment_STATUS_ID : NUMBER
+  payment_AMOUNT : NUMBER(10,2) {NN}
+  currency : NCHAR(3) {NN}
+  transaction_ID : NVARCHAR2(100) {NN, U}
+  created_at : TIMESTAMP {NN}
+  updated_at : TIMESTAMP {NN}
+}
+
+entity "Review" {
+  * rew_ID : NUMBER <<PK>>
+  --
+  # user_ID : NUMBER <<FK>> {NN}
+  # product_ID : NUMBER <<FK>> {NN}
+  rew_RATING : NUMBER {NN}
+  rew_COMMENT : NVARCHAR2(1000)
+  rew_DATE : TIMESTAMP
+}
+
+' =================================
+' Product Core Relationships
+' =================================
+
+Categories ||--o{ Products         
+Vendors    ||--o{ Products         
+Products   ||--o{ ProductMedia     
+Products   ||--o{ ProductAttributes
+Attributes ||--o{ ProductAttributes
+
+' =================================
+' User Activity Relationships
+' =================================
+
+Users      ||--o{ Orders           
+Users      ||--o{ Wishlist         
+Users      ||--o{ Review           
+Users      ||--o{ Promotions       
+
+' =================================
+' Order & Payment Relationships
+' =================================
+
+Orders     ||--o{ OrderItems       
+Orders     ||--o{ Payments         
+Products   ||--o{ OrderItems       
+Promotions ||--o{ Orders           
+
+' =================================
+' Promotion Relationships
+' =================================
+
+Promotions ||--o{ PromotionApplications 
+
+' ===================================
+' Product-User Bridge Relationships
+' ===================================
+
+Products   ||--o{ Wishlist           
+Products   ||--o{ Review             
+
+
+@enduml
